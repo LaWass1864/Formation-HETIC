@@ -31,11 +31,11 @@
             background: white;
             border-radius: 20px;
             box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            padding: 40px 60px;
-            max-width: 1200px;
-            width: 100%;
+            padding: 35px 50px;
+            max-width: 1500px;
+            width: 95%;
             min-height: 600px;
-            max-height: 85vh;
+            max-height: 88vh;
             overflow-y: auto;
             animation: fadeIn 0.5s;
         }
@@ -43,7 +43,6 @@
         .slide.active {
             display: flex;
             flex-direction: column;
-            justify-content: center;
         }
 
         @keyframes fadeIn {
@@ -60,22 +59,22 @@
 
         h2 {
             color: #667eea;
-            font-size: 2.2em;
-            margin-bottom: 20px;
+            font-size: 2em;
+            margin-bottom: 18px;
             border-bottom: 4px solid #667eea;
-            padding-bottom: 10px;
+            padding-bottom: 8px;
         }
 
         h3 {
             color: #764ba2;
-            font-size: 1.6em;
-            margin: 20px 0 10px 0;
+            font-size: 1.5em;
+            margin: 18px 0 10px 0;
         }
 
         p, li {
-            font-size: 1.3em;
-            line-height: 1.6;
-            margin-bottom: 12px;
+            font-size: 1.2em;
+            line-height: 1.5;
+            margin-bottom: 10px;
         }
 
         .subtitle {
@@ -88,6 +87,17 @@
         .section-badge {
             display: inline-block;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .practice-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
             color: white;
             padding: 10px 25px;
             border-radius: 30px;
@@ -119,6 +129,12 @@
             font-size: 1.2em;
             margin: 15px 0;
             overflow-x: auto;
+            line-height: 2.2;
+        }
+        
+        .command-line {
+            margin: 8px 0;
+            display: block;
         }
 
         .steps {
@@ -135,6 +151,14 @@
         .highlight {
             background: #fef5e7;
             padding: 20px 25px;
+            border-radius: 10px;
+            border-left: 5px solid #f39c12;
+            margin: 15px 0;
+        }
+
+        .practice-box {
+            background: #fff4e6;
+            padding: 25px;
             border-radius: 10px;
             border-left: 5px solid #f39c12;
             margin: 15px 0;
@@ -211,17 +235,17 @@
 
         .table-container {
             overflow-x: auto;
-            margin: 20px 0;
+            margin: 15px 0;
         }
 
         table {
             width: 100%;
             border-collapse: collapse;
-            font-size: 1.2em;
+            font-size: 1.1em;
         }
 
         th, td {
-            padding: 15px;
+            padding: 12px;
             text-align: left;
             border-bottom: 2px solid #e2e8f0;
         }
@@ -275,17 +299,29 @@
             font-size: 1.8em;
             opacity: 0.9;
         }
+
+        .code-box {
+            background: #f8f9fa;
+            border: 2px solid #dee2e6;
+            padding: 12px;
+            border-radius: 8px;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.85em;
+            line-height: 1.6;
+            white-space: pre-wrap;
+            word-break: break-all;
+            overflow-wrap: break-word;
+        }
     </style>
 </head>
 <body>
     <div class="slide-number">
-        <span id="current-slide">1</span> / <span id="total-slides">27</span>
+        <span id="current-slide">1</span> / <span id="total-slides">36</span>
     </div>
 
     <div class="slide-container">
-        <!-- ========================================
-             SLIDE 1: TITRE
-             ======================================== -->
+        <!-- SLIDE 1: TITRE -->
         <div class="slide active">
             <h1>🚀 Maîtriser Git & Github</h1>
             <p class="subtitle">Du travail en local à la collaboration en ligne</p>
@@ -302,20 +338,20 @@
                     <div style="font-size: 0.8em; margin-top: 10px; opacity: 0.9;">Github en ligne<br>Collaboration</div>
                 </div>
             </div>
+
+            <div class="highlight" style="margin-top: 40px; text-align: center;">
+                <p style="font-size: 1.4em;">🎯 <strong>Formation pratique</strong> : tu vas coder en même temps !</p>
+            </div>
         </div>
 
-        <!-- ========================================
-             PARTIE 1 : GIT (LOCAL)
-             ======================================== -->
-
-        <!-- Slide séparateur Partie 1 -->
+        <!-- PARTIE 1 : GIT LOCAL -->
         <div class="slide part-separator">
             <h1>PARTIE 1</h1>
             <p style="font-size: 2.5em; margin: 40px 0;">💻 GIT EN LOCAL</p>
             <p>Tout sur ton ordinateur, sans internet</p>
         </div>
 
-        <!-- Slide 2: C'est quoi Git -->
+        <!-- Slide : C'est quoi Git -->
         <div class="slide">
             <div class="section-badge">PARTIE 1 - Git Local</div>
             <h2><span class="emoji">🤔</span>C'est quoi Git ?</h2>
@@ -340,7 +376,7 @@
             </div>
         </div>
 
-        <!-- Slide 3: Installation de Git -->
+        <!-- Slide : Installation -->
         <div class="slide">
             <div class="section-badge">PARTIE 1 - Git Local</div>
             <h2><span class="emoji">⬇️</span>Installation de Git</h2>
@@ -359,11 +395,11 @@
                 <div class="steps">
                     <h3>🍎 Mac :</h3>
                     <ul>
-                        <li>Ouvre le <strong>Terminal</strong> (voir slide suivante)</li>
+                        <li>Ouvre le <strong>Terminal</strong></li>
                         <li>Tape : <code>git --version</code></li>
-                        <li>Une popup apparaît : "Les outils de ligne de commande sont requis"</li>
-                        <li>Clique sur <strong>"Installer"</strong></li>
-                        <li>Attends 5-10 minutes (c'est normal)</li>
+                        <li>Popup : "Installer les outils"</li>
+                        <li>Clique <strong>"Installer"</strong></li>
+                        <li>Attends 5-10 min</li>
                     </ul>
                 </div>
             </div>
@@ -377,993 +413,1034 @@ git --version
             </div>
         </div>
 
-        <!-- NOUVELLE SLIDE : Spécial Mac -->
+        <!-- Slide : Terminal Mac -->
         <div class="slide">
             <div class="section-badge">PARTIE 1 - Git Local</div>
-            <h2><span class="emoji">🍎</span>Spécial Mac - Ouvrir le Terminal</h2>
+            <h2><span class="emoji">🍎</span>Spécial Mac - Le Terminal</h2>
             
             <div class="analogy">
-                <strong>Le Terminal sur Mac :</strong> C'est l'équivalent de "l'invite de commandes" sur Windows
+                <strong>Le Terminal :</strong> Une fenêtre pour taper des commandes
             </div>
 
             <div class="steps" style="margin-top: 25px;">
-                <h3>3 façons d'ouvrir le Terminal :</h3>
+                <h3>Ouvrir le Terminal sur Mac :</h3>
                 <ul>
-                    <li><strong>Méthode 1 (la plus simple) :</strong> 
-                        <br>Appuie sur <code>Cmd + Espace</code> (Spotlight)
-                        <br>Tape "Terminal" puis Entrée
-                    </li>
-                    <li><strong>Méthode 2 :</strong> 
-                        <br>Applications → Utilitaires → Terminal
-                    </li>
-                    <li><strong>Méthode 3 (dans VS Code) :</strong> 
-                        <br>Menu "Terminal" → "New Terminal" ou <code>Ctrl + `</code>
-                    </li>
+                    <li><strong>Méthode rapide :</strong> <code>Cmd + Espace</code> → tape "Terminal" → Entrée</li>
+                    <li><strong>Méthode 2 :</strong> Applications → Utilitaires → Terminal</li>
+                    <li><strong>Dans VS Code :</strong> Menu "Terminal" → "New Terminal"</li>
                 </ul>
             </div>
 
             <div class="highlight" style="margin-top: 25px;">
                 <h3>💡 Astuces Mac :</h3>
                 <ul style="margin-left: 20px;">
-                    <li><strong>Coller dans le Terminal :</strong> <code>Cmd + V</code> (comme d'habitude)</li>
-                    <li><strong>Copier depuis le Terminal :</strong> <code>Cmd + C</code></li>
-                    <li><strong>Effacer l'écran :</strong> Tape <code>clear</code> ou <code>Cmd + K</code></li>
-                    <li><strong>Mot de passe invisible :</strong> Quand tu tapes un mot de passe, rien ne s'affiche (c'est normal !)</li>
+                    <li><strong>Coller :</strong> <code>Cmd + V</code></li>
+                    <li><strong>Effacer l'écran :</strong> <code>clear</code> ou <code>Cmd + K</code></li>
+                    <li><strong>Mot de passe invisible :</strong> Normal, tape-le quand même !</li>
+                    <li><strong>Glisser un dossier :</strong> Tape <code>cd</code> puis glisse le dossier dans le Terminal</li>
                 </ul>
             </div>
         </div>
 
-        <!-- Slide 4: Le Terminal -->
+        <!-- Slide : Commandes Terminal -->
         <div class="slide">
             <div class="section-badge">PARTIE 1 - Git Local</div>
-            <h2><span class="emoji">⌨️</span>Le Terminal - Naviguer dans les Dossiers</h2>
+            <h2><span class="emoji">⌨️</span>Naviguer dans le Terminal</h2>
             
-            <div class="definition">
-                <p><strong>Terminal</strong> = Une fenêtre où tu tapes des commandes pour parler à l'ordinateur</p>
-                <p style="margin-top: 10px;">C'est comme l'Explorateur de fichiers, mais avec du texte</p>
-            </div>
-
-            <div class="steps" style="margin-top: 25px;">
-                <h3>Ouvrir le Terminal :</h3>
-                <ul>
-                    <li><strong>🪟 Windows :</strong> Menu Démarrer → tape "cmd" ou "Git Bash"</li>
-                    <li><strong>🍎 Mac :</strong> Cmd + Espace → tape "Terminal"</li>
-                    <li><strong>💻 VS Code :</strong> Menu "Terminal" → "New Terminal" (Ctrl + ù / Ctrl + `)</li>
-                </ul>
-            </div>
-
             <div class="table-container" style="margin-top: 25px;">
                 <table>
                     <thead>
                         <tr>
                             <th>Commande</th>
                             <th>Ce que ça fait</th>
-                            <th>Mac/Windows</th>
+                            <th>Système</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td><strong>pwd</strong></td>
-                            <td>Voir où tu es (quel dossier)</td>
+                            <td>Voir où tu es</td>
                             <td>Mac & Windows</td>
                         </tr>
                         <tr>
-                            <td><strong>ls</strong> / <strong>dir</strong></td>
+                            <td><strong>ls / dir</strong></td>
                             <td>Lister les fichiers</td>
-                            <td><strong>ls</strong> sur Mac<br><strong>dir</strong> sur Windows</td>
+                            <td>ls (Mac) / dir (Win)</td>
                         </tr>
                         <tr>
-                            <td><strong>cd nom-dossier</strong></td>
+                            <td><strong>cd dossier</strong></td>
                             <td>Entrer dans un dossier</td>
                             <td>Mac & Windows</td>
                         </tr>
                         <tr>
                             <td><strong>cd ..</strong></td>
-                            <td>Revenir au dossier parent</td>
+                            <td>Revenir en arrière</td>
                             <td>Mac & Windows</td>
                         </tr>
                         <tr>
-                            <td><strong>clear</strong> / <strong>cls</strong></td>
-                            <td>Nettoyer l'écran</td>
-                            <td><strong>clear</strong> sur Mac<br><strong>cls</strong> sur Windows</td>
+                            <td><strong>mkdir nom</strong></td>
+                            <td>Créer un dossier</td>
+                            <td>Mac & Windows</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
-
-            <div class="highlight" style="margin-top: 15px;">
-                <p><strong>🍎 Astuce Mac :</strong> Pour aller directement dans un dossier visible, tape <code>cd</code> puis glisse le dossier dans le Terminal !</p>
-            </div>
         </div>
 
-        <!-- Slide 6: Configuration de Git -->
+        <!-- Slide : Configuration Git -->
         <div class="slide">
             <div class="section-badge">PARTIE 1 - Git Local</div>
             <h2><span class="emoji">⚙️</span>Configuration de Git</h2>
             
-            <div class="analogy">
-                <strong>Avant de commencer :</strong> Git a besoin de savoir qui tu es pour signer tes sauvegardes
-            </div>
-
-            <div class="highlight" style="margin-top: 20px; background: #fff3cd; border-left-color: #ffc107;">
-                <p><strong>⚠️ TRÈS IMPORTANT si tu as déjà un compte Github :</strong></p>
+            <div class="highlight" style="background: #fff3cd; border-left-color: #ffc107;">
+                <p><strong>⚠️ IMPORTANT si tu as un compte Github :</strong></p>
                 <ul style="margin-left: 20px;">
-                    <li>Utilise le <strong>MÊME email</strong> que ton compte Github</li>
-                    <li>Utilise ton <strong>nom Github</strong> (ou username)</li>
-                    <li><strong>Pourquoi ?</strong> Pour que tes commits soient liés à ton profil Github !</li>
+                    <li>Utilise le <strong>MÊME email</strong> que Github</li>
+                    <li>Utilise ton <strong>username Github</strong></li>
                 </ul>
             </div>
 
             <div class="command" style="margin-top: 25px;">
-# Configure ton nom (utilise ton nom Github !)
-git config --global user.name "TonUsernameGithub"
+# Configure ton nom
+git config --global user.name "TonNomGithub"
 
-# Configure ton email (utilise l'email de Github !)
+# Configure ton email (le même que Github !)
 git config --global user.email "ton.email@example.com"
 
-# Vérifier la configuration
+# Vérifier
 git config --list
             </div>
 
-            <div class="highlight" style="margin-top: 25px;">
-                <p><strong>💡 Notes :</strong></p>
-                <ul style="margin-left: 20px;">
-                    <li>Si tu n'as pas encore de compte Github, ce n'est pas grave, tu pourras modifier plus tard</li>
-                    <li><code>--global</code> = ça marche pour tous tes projets</li>
-                    <li>À faire une seule fois sur ton ordinateur</li>
-                </ul>
-            </div>
-
-            <div class="steps" style="margin-top: 20px; background: #e8f5e9; border-left-color: #4caf50;">
-                <h3>🍎 Note pour Mac :</h3>
-                <p>Mac peut te demander d'autoriser l'accès au "trousseau". Clique sur "Toujours autoriser" et entre le mot de passe de ta session Mac.</p>
+            <div class="highlight" style="margin-top: 20px;">
+                <p><strong>💡 À faire une seule fois sur ton ordinateur</strong></p>
             </div>
         </div>
 
-        <!-- Slide 6: Créer un dépôt local -->
+        <!-- Slide : Naviguer vers le Bureau -->
         <div class="slide">
             <div class="section-badge">PARTIE 1 - Git Local</div>
-            <h2><span class="emoji">📁</span>Créer un Dépôt Git (Repository)</h2>
+            <h2><span class="emoji">🗺️</span>Naviguer vers le Bureau</h2>
             
-            <div class="definition">
-                <p><strong>Dépôt (repository)</strong> = Un dossier de projet suivi par Git</p>
-                <p style="margin-top: 10px;">C'est comme activer le "mode historique" sur un dossier</p>
+            <div class="analogy">
+                <strong>Avant de créer ton projet :</strong> Il faut aller au bon endroit !
             </div>
 
-            <div class="steps" style="margin-top: 30px;">
-                <h3>Méthode 1 : Créer un nouveau projet</h3>
+            <div class="steps" style="margin-top: 25px;">
+                <h3>Méthode étape par étape (recommandée) :</h3>
                 <div class="command">
-# 1. Créer un dossier
-mkdir mon-projet
+# 1. Voir où tu es
+pwd
 
-# 2. Entrer dans le dossier
-cd mon-projet
+# 2. Aller au Bureau
+cd Desktop
+# OU (si Windows/Mac en français)
+cd Bureau
 
-# 3. Initialiser Git (activer le suivi)
+# 3. Vérifier
+pwd
+ls
+                </div>
+            </div>
+
+            <div class="highlight" style="margin-top: 20px;">
+                <h3>🍎 Astuce MAGIQUE Mac :</h3>
+                <ul style="margin-left: 20px;">
+                    <li>1. Tape <code>cd </code> (avec un espace)</li>
+                    <li>2. Glisse le dossier Bureau dans le Terminal</li>
+                    <li>3. Le chemin s'écrit tout seul !</li>
+                    <li>4. Entrée</li>
+                </ul>
+            </div>
+
+            <div class="two-columns" style="margin-top: 20px;">
+                <div class="steps">
+                    <h3>🪟 Windows</h3>
+                    <div class="command" style="font-size: 0.9em;">
+cd Desktop
+# Ou chemin complet :
+cd C:\Users\TonNom\Desktop
+                    </div>
+                </div>
+                <div class="steps">
+                    <h3>🍎 Mac</h3>
+                    <div class="command" style="font-size: 0.9em;">
+cd Desktop
+# Ou raccourci :
+cd ~/Desktop
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- EXERCICE 1 : Projet de base -->
+        <div class="slide">
+            <div class="practice-badge">🎯 EXERCICE PRATIQUE 1</div>
+            <h2><span class="emoji">💻</span>Créer le Projet "Ma Carte de Visite"</h2>
+            
+            <div class="practice-box">
+                <h3>📋 Fichiers à créer :</h3>
+                <p>Tu vas créer une carte de visite simple en HTML/CSS</p>
+            </div>
+
+            <div class="steps" style="margin-top: 20px;">
+                <h3>Étape 1 : Créer le dossier</h3>
+                <div class="command">
+cd Documents
+mkdir ma-carte-visite
+cd ma-carte-visite
+                </div>
+            </div>
+
+            <div class="steps" style="margin-top: 15px;">
+                <h3>Étape 2 : Initialiser Git</h3>
+                <div class="command">
 git init
-
 # Tu verras : "Initialized empty Git repository"
                 </div>
             </div>
 
-            <div class="steps" style="margin-top: 20px;">
-                <h3>Méthode 2 : Activer Git sur un projet existant</h3>
-                <div class="command">
-# 1. Va dans ton dossier de projet
-cd chemin/vers/mon-projet-existant
+            <div class="highlight">
+                <p><strong>✅ C'est bon si :</strong> Tu vois un dossier caché <code>.git</code> dans ton projet</p>
+            </div>
+        </div>
 
-# 2. Initialise Git
-git init
+        <!-- EXERCICE 1 suite : Code HTML -->
+        <div class="slide">
+            <div class="practice-badge">🎯 EXERCICE PRATIQUE 1 (suite)</div>
+            <h2>Code HTML - index.html</h2>
+            
+            <div class="practice-box">
+                <p><strong>Crée un fichier index.html et copie ce code :</strong></p>
+            </div>
+
+            <div class="code-box" style="font-size: 0.85em;">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="fr"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Ma Carte de Visite&lt;/title&gt;
+    &lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;h1&gt;Prénom Nom&lt;/h1&gt;
+        &lt;p class="metier"&gt;Développeur Web Junior&lt;/p&gt;
+    &lt;/header&gt;
+
+    &lt;section class="a-propos"&gt;
+        &lt;h2&gt;À propos&lt;/h2&gt;
+        &lt;p&gt;Je suis étudiant en développement web.&lt;/p&gt;
+    &lt;/section&gt;
+
+    &lt;section class="competences"&gt;
+        &lt;h2&gt;Compétences&lt;/h2&gt;
+        &lt;ul&gt;
+            &lt;li&gt;HTML&lt;/li&gt;
+            &lt;li&gt;CSS&lt;/li&gt;
+            &lt;li&gt;JavaScript&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/section&gt;
+
+    &lt;footer&gt;
+        &lt;p&gt;&copy; 2024 - Ma Carte&lt;/p&gt;
+    &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+            </div>
+        </div>
+
+        <!-- EXERCICE 1 suite : Code CSS -->
+        <div class="slide">
+            <div class="practice-badge">🎯 EXERCICE PRATIQUE 1 (suite)</div>
+            <h2>Code CSS - style.css</h2>
+            
+            <div class="practice-box">
+                <p><strong>Crée un fichier style.css et copie ce code :</strong></p>
+            </div>
+
+            <div class="code-box" style="font-size: 0.85em;">
+/* COULEURS - FACILE À MODIFIER */
+:root {
+    --couleur-principale: #3498db;
+    --couleur-texte: #2c3e50;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: var(--couleur-texte);
+}
+
+header {
+    background-color: var(--couleur-principale);
+    color: white;
+    text-align: center;
+    padding: 40px;
+}
+
+section {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+h2 {
+    color: var(--couleur-principale);
+    border-bottom: 3px solid var(--couleur-principale);
+    padding-bottom: 10px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: var(--couleur-principale);
+    color: white;
+}
+            </div>
+        </div>
+
+        <!-- EXERCICE 1 suite : Premier commit -->
+        <div class="slide">
+            <div class="practice-badge">🎯 EXERCICE PRATIQUE 1 (fin)</div>
+            <h2>Premier Commit !</h2>
+            
+            <div class="steps">
+                <h3>Étape 3 : Faire ton premier commit</h3>
+                <div class="command">
+# Voir l'état
+git status
+# Les fichiers sont en rouge (non suivis)
+
+# Ajouter tous les fichiers
+git add .
+
+# Voir à nouveau
+git status
+# Les fichiers sont en vert (prêts)
+
+# Faire le commit
+git commit -m "Premier commit : création carte de visite"
+
+# Vérifier
+git log --oneline
                 </div>
             </div>
 
             <div class="highlight">
-                <p><strong>✅ Git est activé si :</strong> Tu vois un dossier caché <code>.git</code> dans ton projet</p>
+                <p><strong>🎉 Bravo ! Tu as fait ton premier commit !</strong></p>
+                <p style="margin-top: 10px;">Ouvre index.html dans ton navigateur pour voir le résultat</p>
             </div>
         </div>
 
-        <!-- Slide 7: Git status et premier commit -->
+        <!-- Slide : Git status, add, commit -->
         <div class="slide">
             <div class="section-badge">PARTIE 1 - Git Local</div>
-            <h2><span class="emoji">📸</span>Faire ton Premier Commit</h2>
+            <h2><span class="emoji">📸</span>Comprendre Add, Commit</h2>
             
-            <div class="analogy">
-                <strong>Commit</strong> = Prendre une photo de ton projet à un instant T
+            <div style="display: flex; flex-direction: column; gap: 20px; margin-top: 30px;">
+                <div class="workflow-box">
+                    1️⃣ <strong>git add</strong> = Préparer les fichiers<br>
+                    <span style="font-size: 0.8em; opacity: 0.9;">Mettre dans l'enveloppe</span>
+                </div>
+
+                <div class="workflow-box">
+                    2️⃣ <strong>git commit -m "message"</strong> = Sauvegarder<br>
+                    <span style="font-size: 0.8em; opacity: 0.9;">Fermer l'enveloppe et noter la date</span>
+                </div>
             </div>
 
-            <div class="command" style="margin-top: 30px;">
-# 1. Crée un fichier (dans VS Code ou terminal)
-echo "# Mon Projet" > README.md
+            <div class="highlight" style="margin-top: 30px;">
+                <h3>Messages de commit :</h3>
+                <ul style="margin-left: 20px;">
+                    <li>✅ "Ajout du menu de navigation"</li>
+                    <li>✅ "Correction bug bouton contact"</li>
+                    <li>❌ "update" / "modif" / "test"</li>
+                </ul>
+            </div>
+        </div>
 
-# 2. Voir l'état de Git
-git status
-# → Tu verras ton fichier en rouge (non suivi)
+        <!-- EXERCICE 2 : Modifier nom -->
+        <div class="slide">
+            <div class="practice-badge">🎯 EXERCICE PRATIQUE 2</div>
+            <h2><span class="emoji">✏️</span>Modifier et Commiter</h2>
+            
+            <div class="practice-box">
+                <h3>Objectif : Personnaliser ton nom</h3>
+            </div>
 
-# 3. Ajouter le fichier à la "zone de préparation"
-git add README.md
+            <div class="steps" style="margin-top: 20px;">
+                <h3>À faire :</h3>
+                <ul>
+                    <li>1. Ouvre <code>index.html</code></li>
+                    <li>2. Change "Prénom Nom" par ton vrai nom</li>
+                    <li>3. Change "Développeur Web Junior" si tu veux</li>
+                    <li>4. Sauvegarde le fichier</li>
+                </ul>
+            </div>
 
-# 4. Voir l'état à nouveau
-git status
-# → Le fichier est maintenant en vert (prêt)
+            <div class="steps" style="margin-top: 15px;">
+                <h3>Commandes Git :</h3>
+                <div class="command">
+git status              # Voir ce qui a changé
+git diff                # Voir les modifications en détail
+git add index.html
+git commit -m "Ajout de mon nom"
+git log --oneline       # Voir l'historique
+                </div>
+            </div>
 
-# 5. Faire le commit (prendre la photo)
-git commit -m "Premier commit : ajout du README"
+            <div class="highlight">
+                <p><strong>✅ Tu as maintenant 2 commits dans ton historique !</strong></p>
+            </div>
+        </div>
 
-# 6. Vérifier
-git status
-# → "nothing to commit, working tree clean"
+        <!-- Slide : Git log et diff -->
+        <div class="slide">
+            <div class="section-badge">PARTIE 1 - Git Local</div>
+            <h2><span class="emoji">📜</span>Git Log & Diff</h2>
+            
+            <div class="command">
+# Voir l'historique
+git log
+git log --oneline           # Version courte
+
+# Voir les modifications
+git diff                    # Avant git add
+git diff --staged          # Après git add
+
+# Sortir
+# Appuie sur "q"
             </div>
 
             <div class="highlight" style="margin-top: 20px;">
-                <p><strong>Les 3 étapes magiques :</strong> status → add → commit</p>
-            </div>
-        </div>
-
-        <!-- Slide 8: Git log -->
-        <div class="slide">
-            <div class="section-badge">PARTIE 1 - Git Local</div>
-            <h2><span class="emoji">📜</span>Git Log - Voir l'Historique</h2>
-            
-            <div class="analogy">
-                <strong>git log</strong> = Consulter le journal de bord de ton projet
-            </div>
-
-            <div class="command" style="margin-top: 30px;">
-# Voir l'historique complet
-git log
-
-# Version plus lisible (une ligne par commit)
-git log --oneline
-
-# Voir les 5 derniers commits
-git log -5
-
-# Voir l'historique avec un graphique (pour les branches)
-git log --oneline --graph --all
-            </div>
-
-            <div class="highlight" style="margin-top: 30px;">
-                <p><strong>Ce que tu vois dans git log :</strong></p>
-                <ul>
-                    <li><strong>Commit hash</strong> : Un code unique (ex: a3f5b2c)</li>
-                    <li><strong>Auteur</strong> : Qui a fait le commit</li>
-                    <li><strong>Date</strong> : Quand c'était</li>
-                    <li><strong>Message</strong> : Description du changement</li>
-                </ul>
-            </div>
-
-            <div class="command" style="margin-top: 20px;">
-# Sortir de git log
-# Appuie sur la touche "q"
-            </div>
-        </div>
-
-        <!-- Slide 9: Git diff -->
-        <div class="slide">
-            <div class="section-badge">PARTIE 1 - Git Local</div>
-            <h2><span class="emoji">🔍</span>Git Diff - Voir les Modifications</h2>
-            
-            <div class="analogy">
-                <strong>git diff</strong> = Comparer deux versions pour voir exactement ce qui a changé
-            </div>
-
-            <div class="command" style="margin-top: 30px;">
-# Voir ce qui a changé (avant git add)
-git diff
-
-# Voir ce qui a changé dans la zone de préparation (après git add)
-git diff --staged
-
-# Comparer avec un commit spécifique
-git diff a3f5b2c
-
-# Comparer deux commits
-git diff a3f5b2c b7d9e1f
-            </div>
-
-            <div class="highlight" style="margin-top: 30px;">
                 <p><strong>Comment lire git diff :</strong></p>
-                <ul>
-                    <li><strong style="color: #ef4444;">- Lignes en rouge</strong> : Ce qui a été supprimé</li>
-                    <li><strong style="color: #10b981;">+ Lignes en vert</strong> : Ce qui a été ajouté</li>
-                    <li>Lignes blanches : Contexte (pas de changement)</li>
+                <ul style="margin-left: 20px;">
+                    <li><strong style="color: #ef4444;">- Lignes rouges</strong> = Supprimé</li>
+                    <li><strong style="color: #10b981;">+ Lignes vertes</strong> = Ajouté</li>
                 </ul>
-            </div>
-
-            <div class="command" style="margin-top: 20px;">
-# Sortir de git diff
-# Appuie sur "q"
             </div>
         </div>
 
-        <!-- Slide 10: Les branches -->
+        <!-- EXERCICE 3 : Changer couleur -->
         <div class="slide">
-            <div class="section-badge">PARTIE 1 - Git Local</div>
-            <h2><span class="emoji">🌿</span>Les Branches - Créer des Univers Parallèles</h2>
+            <div class="practice-badge">🎯 EXERCICE PRATIQUE 3</div>
+            <h2><span class="emoji">🎨</span>Changer la Couleur</h2>
             
-            <div class="definition">
-                <p><strong>Branche</strong> = Une copie parallèle de ton projet pour tester des idées</p>
+            <div class="practice-box">
+                <h3>Objectif : Modifier le CSS</h3>
             </div>
 
-            <div class="analogy" style="margin-top: 30px;">
-                <p><strong>Imagine un jeu avec plusieurs sauvegardes :</strong></p>
-                <ul style="margin-top: 15px;">
-                    <li><strong>main</strong> = Ta sauvegarde principale (stable)</li>
-                    <li><strong>nouvelle-feature</strong> = Une sauvegarde test</li>
-                    <li>Si le test marche → tu copies dans main</li>
-                    <li>Si ça marche pas → tu supprimes, main est intact !</li>
+            <div class="steps" style="margin-top: 20px;">
+                <h3>À faire :</h3>
+                <ul>
+                    <li>1. Ouvre <code>style.css</code></li>
+                    <li>2. Change la couleur principale (ligne 3) :</li>
                 </ul>
+                <div class="code-box" style="margin-top: 10px;">
+--couleur-principale: #e74c3c;  /* Rouge */
+                </div>
+                <p style="margin-top: 10px;"><strong>Autres couleurs :</strong> #2ecc71 (vert), #9b59b6 (violet), #e67e22 (orange)</p>
             </div>
 
-            <div style="background: #2d3748; color: white; padding: 40px; border-radius: 15px; font-family: monospace; font-size: 1.4em; margin-top: 30px;">
-                <div>main ──●──●──●──●────────────●─────▶</div>
-                <div style="margin-top: 20px;">            \                    /</div>
-                <div style="margin-top: 20px;">             nouvelle-feature ──●──●──●</div>
-                <div style="margin-top: 30px; font-size: 0.8em; color: #68d391; text-align: center;">
-                    ● = commit | Dernière jonction = merge
+            <div class="steps" style="margin-top: 15px;">
+                <h3>Commandes Git :</h3>
+                <div class="command">
+git add style.css
+git commit -m "Changement couleur en rouge"
                 </div>
             </div>
+
+            <div class="highlight">
+                <p><strong>🎨 Rafraîchis ton navigateur pour voir le changement !</strong></p>
+            </div>
         </div>
 
-        <!-- Slide 11: Commandes branches -->
+        <!-- Slide : Les branches concept -->
+        <div class="slide">
+            <div class="section-badge">PARTIE 1 - Git Local</div>
+            <h2><span class="emoji">🌿</span>Les Branches</h2>
+            
+            <div class="definition">
+                <p><strong>Branche</strong> = Une copie parallèle pour tester sans casser</p>
+            </div>
+
+            <div class="analogy" style="margin-top: 25px;">
+                <p><strong>Jeu vidéo avec plusieurs sauvegardes :</strong></p>
+                <ul style="margin-top: 10px; margin-left: 20px;">
+                    <li><strong>main</strong> = Sauvegarde principale (stable)</li>
+                    <li><strong>test-arme</strong> = Sauvegarde test</li>
+                    <li>Ça marche → tu copies dans main</li>
+                    <li>Ça marche pas → tu supprimes, main intact !</li>
+                </ul>
+            </div>
+
+            <div style="background: #2d3748; color: white; padding: 30px; border-radius: 15px; font-family: monospace; font-size: 1.3em; margin-top: 25px;">
+                <div>main ──●──●──●──●────────────●─────▶</div>
+                <div style="margin-top: 15px;">            \                    /</div>
+                <div style="margin-top: 15px;">             test ──●──●──●</div>
+            </div>
+        </div>
+
+        <!-- Slide : Commandes branches -->
         <div class="slide">
             <div class="section-badge">PARTIE 1 - Git Local</div>
             <h2><span class="emoji">⚡</span>Manipuler les Branches</h2>
             
             <div class="command">
-# Voir toutes les branches (* = branche actuelle)
+# Voir toutes les branches
 git branch
 
-# Créer une nouvelle branche
+# Créer une branche
 git branch nom-branche
 
-# Aller sur une branche existante
+# Aller sur une branche
 git checkout nom-branche
 
-# Créer ET aller sur une nouvelle branche (combo !)
+# Créer ET aller (combo !)
 git checkout -b nom-branche
 
-# Revenir sur main
+# Retour sur main
 git checkout main
 
 # Supprimer une branche
 git branch -d nom-branche
             </div>
 
-            <div class="highlight" style="margin-top: 30px;">
-                <p><strong>💡 Workflow typique :</strong></p>
-                <div class="command" style="margin-top: 15px;">
-git checkout -b ajout-menu     # Créer branche
-# ... tu codes ...
-git add .
-git commit -m "Menu créé"
-git checkout main              # Retour sur main
-# (on verra le merge dans la partie suivante)
-                </div>
+            <div class="highlight">
+                <p><strong>💡 L'astérisque (*) montre ta branche actuelle</strong></p>
             </div>
         </div>
 
-        <!-- Slide 12: Git restore -->
+        <!-- EXERCICE 4 : Créer branche -->
         <div class="slide">
-            <div class="section-badge">PARTIE 1 - Git Local</div>
-            <h2><span class="emoji">↩️</span>Git Restore - Annuler des Modifications</h2>
+            <div class="practice-badge">🎯 EXERCICE PRATIQUE 4</div>
+            <h2><span class="emoji">🌿</span>Créer une Branche</h2>
             
-            <div class="analogy">
-                <strong>git restore</strong> = Le bouton "Annuler" de Git
+            <div class="practice-box">
+                <h3>Objectif : Tester une nouvelle couleur sur une branche</h3>
             </div>
 
-            <div class="command" style="margin-top: 30px;">
-# Annuler les modifications d'un fichier (revenir à la dernière version committée)
-git restore nom-fichier.html
+            <div class="steps" style="margin-top: 20px;">
+                <h3>À faire :</h3>
+                <div class="command">
+# Créer et aller sur la branche
+git checkout -b test-couleur
 
-# Annuler TOUS les fichiers modifiés
+# Vérifier
+git branch
+# Tu dois voir : * test-couleur
+
+# Modifier style.css : change la couleur
+# Par exemple : --couleur-principale: #9b59b6;
+
+git add style.css
+git commit -m "Test couleur violette"
+
+# Retour sur main
+git checkout main
+# La couleur a changé dans le navigateur ?
+                </div>
+            </div>
+
+            <div class="highlight">
+                <p><strong>🎯 La magie : main est resté intact !</strong></p>
+            </div>
+        </div>
+
+        <!-- Slide : Git merge -->
+        <div class="slide">
+            <div class="section-badge">PARTIE 1 - Git Local</div>
+            <h2><span class="emoji">🔀</span>Git Merge - Fusionner</h2>
+            
+            <div class="analogy">
+                <strong>Merge</strong> = Ramener les modifications d'une branche dans une autre
+            </div>
+
+            <div class="command" style="margin-top: 25px;">
+# Tu es sur la branche "test-couleur"
+# Tu veux fusionner dans "main"
+
+# 1. Aller sur la branche de destination
+git checkout main
+
+# 2. Fusionner
+git merge test-couleur
+
+# 3. C'est fait !
+# main contient maintenant la nouvelle couleur
+            </div>
+
+            <div class="highlight">
+                <p><strong>💡 Toujours aller sur la branche QUI REÇOIT les modifications</strong></p>
+            </div>
+        </div>
+
+        <!-- EXERCICE 5 : Merge -->
+        <div class="slide">
+            <div class="practice-badge">🎯 EXERCICE PRATIQUE 5</div>
+            <h2><span class="emoji">🔀</span>Fusionner ta Branche</h2>
+            
+            <div class="practice-box">
+                <h3>Objectif : Ramener la couleur violette dans main</h3>
+            </div>
+
+            <div class="steps" style="margin-top: 20px;">
+                <h3>À faire :</h3>
+                <div class="command">
+# Vérifier que tu es bien sur main
+git branch
+
+# Fusionner test-couleur
+git merge test-couleur
+
+# Voir l'historique
+git log --oneline --graph
+
+# Optionnel : supprimer la branche test
+git branch -d test-couleur
+                </div>
+            </div>
+
+            <div class="highlight">
+                <p><strong>🎉 Rafraîchis le navigateur : la couleur violette est dans main !</strong></p>
+            </div>
+        </div>
+
+        <!-- Slide : Git restore -->
+        <div class="slide">
+            <div class="section-badge">PARTIE 1 - Git Local</div>
+            <h2><span class="emoji">↩️</span>Git Restore - Annuler</h2>
+            
+            <div class="analogy">
+                <strong>git restore</strong> = Bouton "Annuler"
+            </div>
+
+            <div class="command" style="margin-top: 25px;">
+# Annuler modifications d'un fichier
+git restore fichier.html
+
+# Annuler TOUS les fichiers
 git restore .
 
-# Retirer un fichier de la zone de préparation (annuler git add)
-git restore --staged nom-fichier.html
-
-# Retirer tous les fichiers de la zone de préparation
-git restore --staged .
+# Retirer de la zone de préparation
+git restore --staged fichier.html
             </div>
 
-            <div class="highlight" style="margin-top: 30px;">
+            <div class="highlight" style="background: #fff3cd; border-left-color: #ffc107;">
                 <p><strong>⚠️ Attention :</strong></p>
-                <ul>
-                    <li><code>git restore</code> sans <code>--staged</code> = SUPPRIME tes modifications !</li>
-                    <li>Elles ne seront pas récupérables</li>
-                    <li>Utilise seulement si tu es SÛR de vouloir abandonner tes changements</li>
-                </ul>
-            </div>
-
-            <div class="steps" style="margin-top: 20px;">
-                <h3>Cas d'usage :</h3>
-                <ul>
-                    <li>Tu as fait une erreur et tu veux revenir en arrière</li>
-                    <li>Tu as ajouté un fichier par erreur avec git add</li>
-                    <li>Tu veux recommencer proprement</li>
-                </ul>
+                <p style="margin-top: 10px;"><code>git restore</code> SUPPRIME les modifications non committées !</p>
             </div>
         </div>
 
-        <!-- Slide 13: Modifier un commit -->
+        <!-- Slide : Récap Partie 1 -->
         <div class="slide">
             <div class="section-badge">PARTIE 1 - Git Local</div>
-            <h2><span class="emoji">✏️</span>Modifier le Message du Dernier Commit</h2>
+            <h2><span class="emoji">📝</span>Récap Git Local</h2>
             
-            <div class="analogy">
-                <strong>Oups !</strong> Tu as fait une faute dans ton message de commit ?
-            </div>
-
-            <div class="command" style="margin-top: 30px;">
-# Modifier le message du DERNIER commit
-git commit --amend -m "Nouveau message corrigé"
-
-# Ajouter des fichiers oubliés au dernier commit
-git add fichier-oublie.js
-git commit --amend --no-edit
-# (--no-edit = garder le même message)
-            </div>
-
-            <div class="highlight" style="margin-top: 30px;">
-                <p><strong>⚠️ Important :</strong></p>
-                <ul>
-                    <li><code>--amend</code> modifie UNIQUEMENT le dernier commit</li>
-                    <li>Si tu as déjà push sur Github, évite d'utiliser --amend</li>
-                    <li>Ça modifie l'historique, donc à utiliser avec précaution</li>
-                </ul>
-            </div>
-
-            <div class="steps" style="margin-top: 20px;">
-                <h3>Exemple concret :</h3>
-                <div class="command">
-# Tu viens de faire :
-git commit -m "Ajot du menu"   # Faute de frappe !
-
-# Tu corriges :
-git commit --amend -m "Ajout du menu"   # Corrigé !
-                </div>
-            </div>
-        </div>
-
-        <!-- Slide 14: Récap Partie 1 -->
-        <div class="slide">
-            <div class="section-badge">PARTIE 1 - Git Local</div>
-            <h2><span class="emoji">📝</span>Récapitulatif - Commandes Git Local</h2>
-            
-            <div class="two-columns" style="margin-top: 30px;">
+            <div class="two-columns" style="margin-top: 25px;">
                 <div>
-                    <h3 style="color: #667eea;">Configuration</h3>
-                    <div class="command" style="font-size: 1em;">
-git config --global user.name "Nom"
-git config --global user.email "email"
-git config --list
-                    </div>
-
-                    <h3 style="color: #667eea; margin-top: 20px;">Initialisation</h3>
+                    <h3 style="color: #667eea;">Basics</h3>
                     <div class="command" style="font-size: 1em;">
 git init
-pwd
-ls / dir
-cd dossier
-cd ..
-                    </div>
-                </div>
-
-                <div>
-                    <h3 style="color: #667eea;">Commits</h3>
-                    <div class="command" style="font-size: 1em;">
 git status
 git add .
-git commit -m "message"
-git log
+git commit -m "msg"
 git log --oneline
 git diff
                     </div>
+                </div>
 
-                    <h3 style="color: #667eea; margin-top: 20px;">Branches</h3>
+                <div>
+                    <h3 style="color: #667eea;">Branches</h3>
                     <div class="command" style="font-size: 1em;">
 git branch
 git checkout -b nom
 git checkout main
+git merge nom
 git branch -d nom
                     </div>
                 </div>
             </div>
 
-            <div class="highlight" style="margin-top: 30px;">
-                <div class="command" style="font-size: 1.1em;">
-git restore fichier      # Annuler modifications
-git commit --amend      # Modifier dernier commit
-                </div>
+            <div class="highlight" style="margin-top: 25px; text-align: center;">
+                <p style="font-size: 1.3em;"><strong>👏 Partie 1 terminée ! Pause avant la Partie 2</strong></p>
             </div>
         </div>
 
-        <!-- ========================================
-             PARTIE 2 : GITHUB (DISTANT)
-             ======================================== -->
-
-        <!-- Slide séparateur Partie 2 -->
+        <!-- PARTIE 2 : GITHUB -->
         <div class="slide part-separator">
             <h1>PARTIE 2</h1>
-            <p style="font-size: 2.5em; margin: 40px 0;">☁️ GITHUB EN LIGNE</p>
+            <p style="font-size: 2.5em; margin: 40px 0;">☁️ GITHUB</p>
             <p>Collaboration et partage sur Internet</p>
             <p style="font-size: 1.5em; margin-top: 40px; background: rgba(255,255,255,0.2); padding: 20px; border-radius: 15px;">
-                <strong>🎯 Première étape : Créer ton compte Github !</strong>
+                <strong>🎯 D'abord : Créer ton compte !</strong>
             </p>
         </div>
 
-        <!-- Slide 16: Créer compte Github - MAINTENANT EN PREMIER -->
+        <!-- Slide : Créer compte Github -->
         <div class="slide">
             <div class="section-badge" style="background: linear-gradient(135deg, #10b981 0%, #047857 100%);">PARTIE 2 - Github</div>
-            <h2><span class="emoji">👤</span>ÉTAPE 1 : Créer ton Compte Github</h2>
+            <h2><span class="emoji">👤</span>Créer ton Compte Github</h2>
             
-            <div class="analogy">
-                <strong>Avant toute chose :</strong> Tu dois avoir un compte Github pour pouvoir l'utiliser !
-            </div>
-
-            <div class="steps" style="margin-top: 25px;">
-                <h3>Inscription (2 minutes) :</h3>
+            <div class="steps">
+                <h3>Inscription (2 min) :</h3>
                 <ul>
-                    <li><strong>1.</strong> Va sur <strong>github.com</strong></li>
-                    <li><strong>2.</strong> Clique sur le gros bouton "Sign up" (s'inscrire)</li>
-                    <li><strong>3.</strong> Entre ton <strong>email</strong> 📧</li>
-                    <li><strong>4.</strong> Choisis un <strong>mot de passe</strong> fort 🔒</li>
-                    <li><strong>5.</strong> Choisis un <strong>username</strong> (nom d'utilisateur) 👤</li>
-                    <li><strong>6.</strong> Vérifie que tu n'es pas un robot (puzzle)</li>
-                    <li><strong>7.</strong> Clique sur le lien dans l'email de confirmation</li>
+                    <li>1. Va sur <strong>github.com</strong></li>
+                    <li>2. "Sign up"</li>
+                    <li>3. Entre ton <strong>email</strong></li>
+                    <li>4. Choisis un <strong>mot de passe</strong></li>
+                    <li>5. Choisis un <strong>username</strong></li>
+                    <li>6. Vérifie l'email</li>
                 </ul>
             </div>
 
-            <div class="highlight" style="margin-top: 25px;">
-                <p><strong>💡 Choix du username :</strong></p>
-                <ul style="margin-left: 20px;">
-                    <li>✅ Professionnel : <code>wass-ux</code>, <code>marie-dev</code>, <code>alex-code</code></li>
-                    <li>✅ Simple : <code>prenom-nom</code></li>
-                    <li>❌ Évite : <code>darkgamer666</code>, <code>xx_killer_xx</code></li>
-                    <li><strong>Les recruteurs verront ton profil !</strong></li>
-                </ul>
+            <div class="highlight" style="margin-top: 20px;">
+                <p><strong>💡 Username professionnel :</strong></p>
+                <p>✅ wass-ux, marie-dev | ❌ darkgamer666</p>
             </div>
 
-            <div class="highlight" style="margin-top: 20px; background: #fff3cd; border-left-color: #ffc107;">
-                <p><strong>📝 IMPORTANT - Note bien ces informations :</strong></p>
-                <ul style="margin-left: 20px;">
-                    <li>Ton <strong>username</strong> Github</li>
-                    <li>Ton <strong>email</strong> utilisé pour l'inscription</li>
-                    <li>Tu devras utiliser ces MÊMES informations quand tu configureras Git !</li>
-                </ul>
-            </div>
-
-            <div class="workflow-box" style="margin-top: 25px; font-size: 1.2em;">
-                🎉 Une fois inscrit, tu peux passer à la suite !
+            <div class="highlight" style="margin-top: 15px; background: #fff3cd; border-left-color: #ffc107;">
+                <p><strong>📝 Note ces infos :</strong> Username + Email</p>
+                <p>Tu en auras besoin pour git config !</p>
             </div>
         </div>
 
-        <!-- Slide 17: C'est quoi Github -->
+        <!-- Slide : C'est quoi Github -->
         <div class="slide">
             <div class="section-badge" style="background: linear-gradient(135deg, #10b981 0%, #047857 100%);">PARTIE 2 - Github</div>
             <h2><span class="emoji">☁️</span>C'est quoi Github ?</h2>
             
             <div class="definition">
-                <p><strong>Github</strong> = Un site web pour stocker ton code en ligne</p>
-                <p style="margin-top: 10px;">C'est Google Drive, mais spécialisé pour les développeurs</p>
+                <p><strong>Github</strong> = Google Drive pour le code</p>
             </div>
 
-            <div class="analogy" style="margin-top: 40px;">
+            <div class="analogy" style="margin-top: 25px;">
                 <p><strong>La différence :</strong></p>
-                <ul style="margin-top: 15px;">
-                    <li><strong>Git</strong> = Le logiciel sur ton ordi (travail local)</li>
-                    <li><strong>Github</strong> = Le site web dans le cloud (travail en ligne)</li>
+                <ul style="margin-top: 10px; margin-left: 20px;">
+                    <li><strong>Git</strong> = Logiciel (ton ordi)</li>
+                    <li><strong>Github</strong> = Site web (cloud)</li>
                 </ul>
             </div>
 
-            <div class="highlight" style="margin-top: 30px;">
-                <p><strong>Pourquoi utiliser Github ?</strong></p>
-                <ul style="margin-top: 15px;">
-                    <li>☁️ Sauvegarder ton code en ligne (backup)</li>
-                    <li>👥 Travailler à plusieurs sur le même projet</li>
-                    <li>🌍 Partager ton code avec le monde entier</li>
-                    <li>💼 Montrer ton travail aux recruteurs (portfolio)</li>
-                    <li>📖 Collaborer sur des projets open source</li>
+            <div class="highlight" style="margin-top: 25px;">
+                <p><strong>Pourquoi Github ?</strong></p>
+                <ul style="margin-left: 20px;">
+                    <li>☁️ Backup en ligne</li>
+                    <li>👥 Collaboration</li>
+                    <li>💼 Portfolio pour recruteurs</li>
+                    <li>🌍 Partage open source</li>
                 </ul>
             </div>
         </div>
 
-        <!-- Slide 18: Git push -->
+        <!-- Slide : Git push -->
         <div class="slide">
             <div class="section-badge" style="background: linear-gradient(135deg, #10b981 0%, #047857 100%);">PARTIE 2 - Github</div>
-            <h2><span class="emoji">📤</span>Git Push - Envoyer ton Code sur Github</h2>
+            <h2><span class="emoji">📤</span>Git Push</h2>
             
             <div class="analogy">
-                <strong>git push</strong> = Envoyer tes commits de ton ordi vers Github
+                <strong>git push</strong> = Envoyer tes commits vers Github
             </div>
 
             <div class="command" style="margin-top: 25px;">
-# 1. Créer un repo sur Github.com (bouton "New repository")
-# 2. Copier l'URL du repo (ex: https://github.com/username/mon-projet.git)
+# 1. Créer repo sur Github.com ("New repository")
+# 2. Copier l'URL
 
-# 3. Connecter ton projet local à Github
-git remote add origin https://github.com/username/mon-projet.git
+# 3. Connecter local → Github
+git remote add origin https://github.com/user/projet.git
 
-# 4. Voir les connexions
-git remote -v
-
-# 5. Envoyer ton code pour la PREMIÈRE fois
+# 4. Envoyer
 git push -u origin main
 
-# 6. Les fois suivantes, c'est plus simple :
+# 5. Les fois suivantes :
 git push
-            </div>
-
-            <div class="two-columns" style="margin-top: 20px;">
-                <div class="highlight">
-                    <p><strong>Vocabulaire :</strong></p>
-                    <ul style="margin-left: 20px;">
-                        <li><strong>origin</strong> = Surnom du repo Github</li>
-                        <li><strong>main</strong> = Branche principale</li>
-                        <li><strong>-u</strong> = Configure le lien (1 fois)</li>
-                    </ul>
-                </div>
-                
-                <div class="steps" style="background: #e8f5e9; border-left-color: #4caf50;">
-                    <h3>🍎 Mac : Authentification</h3>
-                    <p>Au premier push, Mac va demander tes identifiants Github :</p>
-                    <ul style="margin-left: 20px; font-size: 0.9em;">
-                        <li>Username : ton pseudo Github</li>
-                        <li>Password : utilise un <strong>Personal Access Token</strong></li>
-                        <li>(Settings → Developer → Tokens sur Github)</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <!-- Slide 18: Git pull -->
-        <div class="slide">
-            <div class="section-badge" style="background: linear-gradient(135deg, #10b981 0%, #047857 100%);">PARTIE 2 - Github</div>
-            <h2><span class="emoji">📥</span>Git Pull - Récupérer du Code depuis Github</h2>
-            
-            <div class="analogy">
-                <strong>git pull</strong> = Télécharger les nouveaux commits de Github vers ton ordi
-            </div>
-
-            <div class="command" style="margin-top: 30px;">
-# Récupérer les modifications depuis Github
-git pull
-
-# Récupérer depuis une branche spécifique
-git pull origin nom-branche
-            </div>
-
-            <div class="two-columns" style="margin-top: 40px;">
-                <div class="workflow-box">
-                    <div style="font-size: 2em;">📤</div>
-                    <div style="font-size: 1.3em; margin-top: 15px;">PUSH</div>
-                    <div style="font-size: 0.9em; margin-top: 10px; opacity: 0.9;">
-                        J'ENVOIE mon travail<br>vers Github
-                    </div>
-                </div>
-                <div class="workflow-box">
-                    <div style="font-size: 2em;">📥</div>
-                    <div style="font-size: 1.3em; margin-top: 15px;">PULL</div>
-                    <div style="font-size: 0.9em; margin-top: 10px; opacity: 0.9;">
-                        Je RÉCUPÈRE le travail<br>des autres depuis Github
-                    </div>
-                </div>
-            </div>
-
-            <div class="highlight" style="margin-top: 30px;">
-                <p><strong>Règle d'or :</strong></p>
-                <p style="font-size: 1.3em; margin-top: 15px;">
-                    🌅 Matin : <code>git pull</code> avant de coder<br>
-                    ☁️ Avant de push : <code>git pull</code> pour être à jour
-                </p>
-            </div>
-        </div>
-
-        <!-- Slide 19: Git clone -->
-        <div class="slide">
-            <div class="section-badge" style="background: linear-gradient(135deg, #10b981 0%, #047857 100%);">PARTIE 2 - Github</div>
-            <h2><span class="emoji">📋</span>Git Clone - Télécharger un Projet</h2>
-            
-            <div class="analogy">
-                <strong>git clone</strong> = Télécharger une copie complète d'un projet Github
-            </div>
-
-            <div class="steps" style="margin-top: 30px;">
-                <h3>Comment cloner un projet :</h3>
-                <ul>
-                    <li>Va sur le projet Github que tu veux</li>
-                    <li>Clique sur le bouton vert <strong>"Code"</strong></li>
-                    <li>Copie l'URL (ex: https://github.com/user/projet.git)</li>
-                </ul>
-            </div>
-
-            <div class="command" style="margin-top: 30px;">
-# 1. Va dans le dossier où tu veux télécharger
-cd Documents/mes-projets
-
-# 2. Clone le projet
-git clone https://github.com/user/projet.git
-
-# 3. Entre dans le dossier du projet
-cd projet
-
-# 4. Tu peux maintenant travailler !
-            </div>
-
-            <div class="highlight" style="margin-top: 30px;">
-                <p><strong>💡 Cas d'usage :</strong></p>
-                <ul>
-                    <li>Rejoindre un projet d'équipe</li>
-                    <li>Télécharger un projet open source</li>
-                    <li>Récupérer ton propre projet sur un autre ordinateur</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- Slide 20: Git merge -->
-        <div class="slide">
-            <div class="section-badge" style="background: linear-gradient(135deg, #10b981 0%, #047857 100%);">PARTIE 2 - Github</div>
-            <h2><span class="emoji">🔀</span>Git Merge - Fusionner des Branches</h2>
-            
-            <div class="analogy">
-                <strong>git merge</strong> = Fusionner le travail d'une branche dans une autre
-            </div>
-
-            <div class="command" style="margin-top: 30px;">
-# Scénario : Tu as fini de coder sur "nouvelle-feature"
-# Tu veux ramener ce code dans "main"
-
-# 1. Aller sur la branche de destination
-git checkout main
-
-# 2. Fusionner la branche
-git merge nouvelle-feature
-
-# 3. Si tout va bien, Git fusionne automatiquement
-# 4. Envoyer sur Github
-git push
-            </div>
-
-            <div class="highlight" style="margin-top: 30px;">
-                <p><strong>Workflow complet :</strong></p>
-                <div class="command" style="margin-top: 15px;">
-git checkout -b nouvelle-feature   # Créer branche
-# ... coder ...
-git add .
-git commit -m "Feature terminée"
-git push origin nouvelle-feature   # Push la branche
-
-git checkout main                  # Retour sur main
-git merge nouvelle-feature         # Fusionner
-git push                          # Push main
-                </div>
-            </div>
-        </div>
-
-        <!-- Slide 21: Conflits de merge -->
-        <div class="slide">
-            <div class="section-badge" style="background: linear-gradient(135deg, #10b981 0%, #047857 100%);">PARTIE 2 - Github</div>
-            <h2><span class="emoji">⚠️</span>Gérer les Conflits de Merge</h2>
-            
-            <div class="definition">
-                <p><strong>Conflit</strong> = Deux personnes ont modifié les mêmes lignes de code</p>
-                <p style="margin-top: 10px;">Git ne sait pas quelle version garder → il te demande de choisir</p>
-            </div>
-
-            <div class="command" style="margin-top: 30px;">
-# Quand il y a un conflit, Git te montre ça dans le fichier :
-
-<<<<<<< HEAD (ta version)
-const titre = "Mon Super Projet";
-=======
-const titre = "Notre Projet Collaboratif";
->>>>>>> nouvelle-feature (l'autre version)
-            </div>
-
-            <div class="steps" style="margin-top: 30px;">
-                <h3>Comment résoudre :</h3>
-                <ul>
-                    <li><strong>1.</strong> Ouvre le fichier en conflit dans VS Code</li>
-                    <li><strong>2.</strong> Choisis quelle version garder (ou mixe les deux)</li>
-                    <li><strong>3.</strong> Supprime les marqueurs <code>&lt;&lt;&lt;</code>, <code>===</code>, <code>&gt;&gt;&gt;</code></li>
-                    <li><strong>4.</strong> Sauvegarde le fichier</li>
-                    <li><strong>5.</strong> <code>git add .</code> puis <code>git commit -m "Résolution conflit"</code></li>
-                </ul>
             </div>
 
             <div class="highlight">
-                <p><strong>💡 Pas de panique !</strong> Les conflits sont normaux en équipe. Git protège ton code.</p>
+                <p><strong>origin</strong> = Surnom du repo Github</p>
             </div>
         </div>
 
-        <!-- Slide 22: Workflow équipe -->
+        <!-- EXERCICE 6 : Premier push -->
         <div class="slide">
-            <div class="section-badge" style="background: linear-gradient(135deg, #10b981 0%, #047857 100%);">PARTIE 2 - Github</div>
-            <h2><span class="emoji">👥</span>Travailler en Équipe</h2>
+            <div class="practice-badge">🎯 EXERCICE PRATIQUE 6</div>
+            <h2><span class="emoji">📤</span>Premier Push sur Github</h2>
             
-            <div class="analogy">
-                <strong>Le cycle quotidien d'une équipe</strong>
+            <div class="practice-box">
+                <h3>Objectif : Mettre ta carte de visite en ligne</h3>
             </div>
 
-            <div class="workflow-box" style="margin-top: 30px; padding: 40px; text-align: left;">
-                <div style="font-size: 1.2em; margin-bottom: 20px;">🌅 <strong>Le Matin</strong></div>
-                <div class="command" style="font-size: 0.9em; margin-left: 30px;">
-git pull                    # Récupérer le travail de l'équipe
+            <div class="steps" style="margin-top: 20px;">
+                <h3>Sur Github.com :</h3>
+                <ul>
+                    <li>1. Clique "New repository" (bouton vert)</li>
+                    <li>2. Nom : <code>ma-carte-visite</code></li>
+                    <li>3. Laisse tout par défaut</li>
+                    <li>4. "Create repository"</li>
+                    <li>5. Copie l'URL qui apparaît</li>
+                </ul>
+            </div>
+
+            <div class="steps" style="margin-top: 15px;">
+                <h3>Dans ton terminal :</h3>
+                <div class="command">
+git remote add origin https://github.com/TON-USERNAME/ma-carte-visite.git
+git push -u origin main
+
+# Rafraîchis Github : ton code est en ligne ! 🎉
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide : Git pull -->
+        <div class="slide">
+            <div class="section-badge" style="background: linear-gradient(135deg, #10b981 0%, #047857 100%);">PARTIE 2 - Github</div>
+            <h2><span class="emoji">📥</span>Git Pull</h2>
+            
+            <div class="analogy">
+                <strong>git pull</strong> = Récupérer depuis Github
+            </div>
+
+            <div class="two-columns" style="margin-top: 30px;">
+                <div class="workflow-box">
+                    📤 PUSH<br>
+                    <span style="font-size: 0.8em;">J'ENVOIE</span>
+                </div>
+                <div class="workflow-box">
+                    📥 PULL<br>
+                    <span style="font-size: 0.8em;">Je RÉCUPÈRE</span>
+                </div>
+            </div>
+
+            <div class="command" style="margin-top: 25px;">
+git pull
+            </div>
+
+            <div class="highlight" style="margin-top: 20px;">
+                <p><strong>Règle d'or :</strong></p>
+                <p style="margin-top: 10px;">🌅 Matin : <code>git pull</code><br>☁️ Avant push : <code>git pull</code></p>
+            </div>
+        </div>
+
+        <!-- EXERCICE 7 : Modifier sur Github -->
+        <div class="slide">
+            <div class="practice-badge">🎯 EXERCICE PRATIQUE 7</div>
+            <h2><span class="emoji">📥</span>Comprendre Git Pull</h2>
+            
+            <div class="practice-box">
+                <h3>Objectif : Modifier sur Github et récupérer localement</h3>
+            </div>
+
+            <div class="steps" style="margin-top: 20px;">
+                <h3>Sur Github.com :</h3>
+                <ul>
+                    <li>1. Ouvre ton repo <code>ma-carte-visite</code></li>
+                    <li>2. Clique sur <code>index.html</code></li>
+                    <li>3. Clique sur l'icône crayon ✏️</li>
+                    <li>4. Change le titre de la page</li>
+                    <li>5. En bas : "Commit changes"</li>
+                </ul>
+            </div>
+
+            <div class="steps" style="margin-top: 15px;">
+                <h3>Dans ton terminal :</h3>
+                <div class="command">
+git pull
+
+# Ouvre index.html : le changement est là !
+                </div>
+            </div>
+
+            <div class="highlight">
+                <p><strong>🎯 Tu comprends maintenant le cycle : push ↔ pull</strong></p>
+            </div>
+        </div>
+
+        <!-- Slide : Git clone -->
+        <div class="slide">
+            <div class="section-badge" style="background: linear-gradient(135deg, #10b981 0%, #047857 100%);">PARTIE 2 - Github</div>
+            <h2><span class="emoji">📋</span>Git Clone</h2>
+            
+            <div class="analogy">
+                <strong>git clone</strong> = Télécharger un projet Github
+            </div>
+
+            <div class="command" style="margin-top: 25px;">
+# 1. Va dans ton dossier
+cd Documents
+
+# 2. Clone
+git clone https://github.com/user/projet.git
+
+# 3. Entre dans le projet
+cd projet
+            </div>
+
+            <div class="highlight">
+                <p><strong>💡 Cas d'usage :</strong></p>
+                <ul style="margin-left: 20px;">
+                    <li>Rejoindre un projet d'équipe</li>
+                    <li>Télécharger un projet open source</li>
+                    <li>Récupérer ton projet sur un autre PC</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide : Collaboration -->
+        <div class="slide">
+            <div class="section-badge" style="background: linear-gradient(135deg, #10b981 0%, #047857 100%);">PARTIE 2 - Github</div>
+            <h2><span class="emoji">👥</span>Workflow Équipe</h2>
+            
+            <div class="workflow-box" style="text-align: left; padding: 30px;">
+                <div style="font-size: 1.1em; margin-bottom: 15px;">🌅 <strong>Matin</strong></div>
+                <div class="command" style="font-size: 0.9em; margin-left: 20px;">
+git pull
                 </div>
 
-                <div style="font-size: 1.2em; margin: 30px 0 20px 0;">💻 <strong>Pendant la Journée</strong></div>
-                <div class="command" style="font-size: 0.9em; margin-left: 30px;">
-# Travailler sur une branche
+                <div style="font-size: 1.1em; margin: 20px 0 15px 0;">💻 <strong>Journée</strong></div>
+                <div class="command" style="font-size: 0.9em; margin-left: 20px;">
 git checkout -b ma-tache
-# ... coder ...
+# coder...
 git add .
 git commit -m "Tâche terminée"
                 </div>
 
-                <div style="font-size: 1.2em; margin: 30px 0 20px 0;">🌆 <strong>Le Soir</strong></div>
-                <div class="command" style="font-size: 0.9em; margin-left: 30px;">
+                <div style="font-size: 1.1em; margin: 20px 0 15px 0;">🌆 <strong>Soir</strong></div>
+                <div class="command" style="font-size: 0.9em; margin-left: 20px;">
 git checkout main
-git pull                    # Vérifier les mises à jour
-git merge ma-tache          # Fusionner mon travail
-git push                    # Partager avec l'équipe
+git pull
+git merge ma-tache
+git push
                 </div>
             </div>
         </div>
 
-        <!-- Slide 23: Pull Requests -->
+        <!-- Slide : Conflits -->
         <div class="slide">
             <div class="section-badge" style="background: linear-gradient(135deg, #10b981 0%, #047857 100%);">PARTIE 2 - Github</div>
-            <h2><span class="emoji">🔔</span>Pull Requests - La Méthode Pro</h2>
+            <h2><span class="emoji">⚠️</span>Gérer les Conflits</h2>
             
             <div class="definition">
-                <p><strong>Pull Request (PR)</strong> = Demander à l'équipe de vérifier ton code avant de merger</p>
+                <p><strong>Conflit</strong> = Deux personnes modifient les mêmes lignes</p>
             </div>
 
-            <div class="steps" style="margin-top: 30px;">
-                <h3>Workflow avec Pull Request :</h3>
+            <div class="command" style="margin-top: 25px;">
+<<<<<<< HEAD (ta version)
+const titre = "Mon Projet";
+=======
+const titre = "Notre Projet";
+>>>>>>> autre-branche
+            </div>
+
+            <div class="steps" style="margin-top: 20px;">
+                <h3>Comment résoudre :</h3>
                 <ul>
-                    <li><strong>1.</strong> Tu crées une branche et tu codes</li>
-                    <li><strong>2.</strong> Tu push ta branche sur Github</li>
-                    <li><strong>3.</strong> Sur Github.com, tu cliques "Create Pull Request"</li>
-                    <li><strong>4.</strong> Ton équipe voit ton code et peut commenter</li>
-                    <li><strong>5.</strong> Si tout est bon, quelqu'un approuve et merge</li>
+                    <li>1. Choisis quelle version garder</li>
+                    <li>2. Supprime les marqueurs &lt;&lt;&lt;, ===, &gt;&gt;&gt;</li>
+                    <li>3. <code>git add .</code></li>
+                    <li>4. <code>git commit -m "Résolution conflit"</code></li>
                 </ul>
             </div>
 
-            <div class="command" style="margin-top: 30px;">
-# Workflow Pull Request
-git checkout -b nouvelle-feature
-# ... coder ...
-git add .
-git commit -m "Feature terminée"
-git push origin nouvelle-feature
-
-# Ensuite sur Github.com :
-# - Créer Pull Request
-# - Attendre validation
-# - Quelqu'un merge
-            </div>
-
             <div class="highlight">
-                <p><strong>Avantages :</strong> Revue de code, discussions, qualité du projet !</p>
+                <p><strong>💡 Pas de panique ! Git protège ton code</strong></p>
             </div>
         </div>
 
-        <!-- Slide 24: Récap Partie 2 -->
+        <!-- Slide : Problèmes Mac -->
         <div class="slide">
             <div class="section-badge" style="background: linear-gradient(135deg, #10b981 0%, #047857 100%);">PARTIE 2 - Github</div>
-            <h2><span class="emoji">📝</span>Récapitulatif - Commandes Github</h2>
+            <h2><span class="emoji">🍎</span>Problèmes Mac</h2>
             
-            <div class="two-columns" style="margin-top: 30px;">
+            <div class="steps">
+                <h3>❌ "xcrun: error"</h3>
+                <div class="command">
+xcode-select --install
+                </div>
+            </div>
+
+            <div class="steps" style="margin-top: 15px;">
+                <h3>❌ "Permission denied"</h3>
+                <p>Utilise HTTPS au lieu de SSH</p>
+                <div class="command">
+https://github.com/user/repo.git
+# Pas : git@github.com:user/repo.git
+                </div>
+            </div>
+
+            <div class="steps" style="margin-top: 15px;">
+                <h3>❌ Mot de passe demandé à chaque fois</h3>
+                <div class="command">
+git config --global credential.helper osxkeychain
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide : Récap Partie 2 -->
+        <div class="slide">
+            <div class="section-badge" style="background: linear-gradient(135deg, #10b981 0%, #047857 100%);">PARTIE 2 - Github</div>
+            <h2><span class="emoji">📝</span>Récap Github</h2>
+            
+            <div class="two-columns" style="margin-top: 25px;">
                 <div>
-                    <h3 style="color: #10b981;">Connexion Github</h3>
+                    <h3 style="color: #10b981;">Connexion</h3>
                     <div class="command" style="font-size: 1em;">
 git remote add origin URL
-git remote -v
 git push -u origin main
 git push
-                    </div>
-
-                    <h3 style="color: #10b981; margin-top: 20px;">Récupérer Code</h3>
-                    <div class="command" style="font-size: 1em;">
-git clone URL
-git pull
-git fetch
                     </div>
                 </div>
 
                 <div>
                     <h3 style="color: #10b981;">Collaboration</h3>
                     <div class="command" style="font-size: 1em;">
-git merge branche
+git clone URL
+git pull
+git merge
 # Résoudre conflits
-git add .
-git commit -m "Résolution"
-                    </div>
-
-                    <h3 style="color: #10b981; margin-top: 20px;">Workflow Équipe</h3>
-                    <div class="command" style="font-size: 1em;">
-git pull              # Matin
-git checkout -b tache
-git push origin tache
-# Pull Request sur Github
                     </div>
                 </div>
             </div>
 
-            <div class="highlight" style="margin-top: 30px; text-align: center;">
+            <div class="highlight" style="margin-top: 25px; text-align: center;">
                 <p style="font-size: 1.4em;"><strong>Push = Envoyer 📤 | Pull = Recevoir 📥</strong></p>
             </div>
         </div>
 
-        <!-- NOUVELLE SLIDE : Problèmes courants Mac -->
-        <div class="slide">
-            <div class="section-badge" style="background: linear-gradient(135deg, #10b981 0%, #047857 100%);">PARTIE 2 - Github</div>
-            <h2><span class="emoji">🍎</span>Problèmes Courants sur Mac</h2>
-            
-            <div class="steps">
-                <h3>❌ "xcrun: error: invalid active developer path"</h3>
-                <p><strong>Solution :</strong> Installe les Xcode Command Line Tools</p>
-                <div class="command">
-xcode-select --install
-                </div>
-            </div>
-
-            <div class="steps" style="margin-top: 20px;">
-                <h3>❌ "Permission denied (publickey)" lors du push</h3>
-                <p><strong>Solution :</strong> Utilise HTTPS au lieu de SSH</p>
-                <div class="command">
-# Au lieu de : git@github.com:user/repo.git
-# Utilise : https://github.com/user/repo.git
-                </div>
-            </div>
-
-            <div class="steps" style="margin-top: 20px;">
-                <h3>❌ Git demande le mot de passe à chaque push</h3>
-                <p><strong>Solution :</strong> Utilise le trousseau Mac</p>
-                <div class="command">
-git config --global credential.helper osxkeychain
-                </div>
-                <p style="margin-top: 10px;">Ensuite, au prochain push, entre ton Personal Access Token de Github</p>
-            </div>
-
-            <div class="highlight" style="margin-top: 20px;">
-                <p><strong>🔑 Personal Access Token Github :</strong></p>
-                <p style="margin-top: 10px;">Github.com → Settings → Developer settings → Personal access tokens → Generate new token</p>
-            </div>
-        </div>
-
-        <!-- Slide 26: Conclusion -->
+        <!-- Slide : Conclusion -->
         <div class="slide">
             <h2><span class="emoji">🎉</span>Félicitations !</h2>
             
-            <div style="display: flex; flex-direction: column; gap: 25px; margin-top: 40px;">
-                <div class="highlight">
-                    <h3>✅ PARTIE 1 : Git Local</h3>
-                    <p>Tu sais créer des repos, faire des commits, gérer des branches en local</p>
-                </div>
+            <div class="highlight">
+                <h3>✅ PARTIE 1 : Git Local</h3>
+                <p>Repos, commits, branches, merge</p>
+            </div>
 
-                <div class="highlight">
-                    <h3>✅ PARTIE 2 : Github Collaboration</h3>
-                    <p>Tu sais partager ton code, collaborer en équipe, gérer les conflits</p>
-                </div>
+            <div class="highlight" style="margin-top: 20px;">
+                <h3>✅ PARTIE 2 : Github</h3>
+                <p>Push, pull, clone, collaboration</p>
+            </div>
 
-                <div class="highlight">
-                    <h3>🚀 Prochaines Étapes</h3>
-                    <ul style="margin-top: 15px;">
-                        <li>Pratique sur un vrai projet</li>
-                        <li>Contribue à des projets open source</li>
-                        <li>Crée ton portfolio Github</li>
-                        <li>Explore les Github Actions (automatisation)</li>
-                    </ul>
-                </div>
+            <div class="highlight" style="margin-top: 20px;">
+                <h3>🎯 Tu as appris :</h3>
+                <ul style="margin-left: 20px;">
+                    <li>Créer et gérer un projet Git</li>
+                    <li>Travailler avec des branches</li>
+                    <li>Collaborer via Github</li>
+                    <li>Gérer les conflits</li>
+                </ul>
+            </div>
 
-                <div class="highlight" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none;">
-                    <h3 style="color: white;">💪 Maintenant, PRATIQUE !</h3>
-                    <p style="font-size: 1.3em; margin-top: 15px;">
-                        On passe aux exercices sur le projet HTML/CSS
-                    </p>
-                </div>
+            <div class="workflow-box" style="margin-top: 30px;">
+                <p style="font-size: 1.3em;">💪 Continue à pratiquer !</p>
+                <p style="font-size: 0.9em; margin-top: 10px;">Chaque projet = une occasion d'utiliser Git</p>
             </div>
         </div>
     </div>
@@ -1395,7 +1472,6 @@ git config --global credential.helper osxkeychain
             showSlide(currentSlide - 1);
         }
 
-        // Navigation au clavier
         document.addEventListener('keydown', function(e) {
             if (e.key === 'ArrowRight' || e.key === ' ') {
                 nextSlide();
