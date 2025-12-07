@@ -557,7 +557,7 @@ ls
                     <h3>🪟 Windows</h3>
                     <div class="command" style="font-size: 0.9em;">
 cd Desktop
-# Ou chemin complet :
+# Ou chemin complet
 cd C:\Users\TonNom\Desktop
                     </div>
                 </div>
@@ -565,7 +565,7 @@ cd C:\Users\TonNom\Desktop
                     <h3>🍎 Mac</h3>
                     <div class="command" style="font-size: 0.9em;">
 cd Desktop
-# Ou raccourci :
+# Ou raccourci
 cd ~/Desktop
                     </div>
                 </div>
@@ -586,7 +586,9 @@ cd ~/Desktop
                 <h3>Étape 1 : Créer le dossier</h3>
                 <div class="command">
 cd Documents
+
 mkdir ma-carte-visite
+
 cd ma-carte-visite
                 </div>
             </div>
@@ -595,8 +597,8 @@ cd ma-carte-visite
                 <h3>Étape 2 : Initialiser Git</h3>
                 <div class="command">
 git init
-# Tu verras : "Initialized empty Git repository"
                 </div>
+                <p style="margin-top: 10px;">Tu verras : "Initialized empty Git repository"</p>
             </div>
 
             <div class="highlight">
@@ -900,7 +902,7 @@ git branch
 # Créer une branche
 git branch nom-branche
 
-# Aller sur une branche
+# Aller sur une branche EXISTANTE
 git checkout nom-branche
 
 # Créer ET aller (combo !)
@@ -913,8 +915,18 @@ git checkout main
 git branch -d nom-branche
             </div>
 
-            <div class="highlight">
-                <p><strong>💡 L'astérisque (*) montre ta branche actuelle</strong></p>
+            <div class="highlight" style="margin-top: 20px; background: #e8f5e9; border-left-color: #4caf50;">
+                <h3>💡 Différence importante :</h3>
+                <p style="margin-top: 10px;"><strong>git checkout -b test</strong> = COMBO de 2 commandes :</p>
+                <div class="command" style="margin-top: 10px;">
+git branch test        # 1. Créer la branche
+git checkout test      # 2. Aller dessus
+                </div>
+                <p style="margin-top: 10px;"><strong>-b</strong> = "branch" = créer une nouvelle branche</p>
+            </div>
+
+            <div class="highlight" style="margin-top: 15px;">
+                <p><strong>L'astérisque (*) montre ta branche actuelle</strong></p>
             </div>
         </div>
 
