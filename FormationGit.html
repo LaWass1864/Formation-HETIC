@@ -1261,7 +1261,57 @@
           </div>
         </div>
       </div>
+<!-- Slide : Git fetch vs pull -->
+<div class="slide">
+    <div class="section-badge" style="background: linear-gradient(135deg, #10b981 0%, #047857 100%);">PARTIE 2 - Github</div>
+    <h2><span class="emoji">🔍</span>Git Fetch vs Git Pull</h2>
+    
+    <div class="definition">
+        <p><strong>git fetch</strong> = Télécharger SANS appliquer</p>
+        <p style="margin-top: 10px;"><strong>git pull</strong> = Télécharger ET appliquer (fetch + merge)</p>
+    </div>
 
+    <div class="two-columns" style="margin-top: 30px;">
+        <div class="steps">
+            <h3>📦 Git Fetch</h3>
+            <div class="command">
+git fetch
+# Télécharge les infos
+# Ton code ne change PAS
+            </div>
+            <div class="analogy" style="margin-top: 15px; font-size: 0.95em;">
+                <strong>Analogie :</strong> Recevoir un colis mais le laisser fermé
+            </div>
+        </div>
+
+        <div class="steps">
+            <h3>⚡ Git Pull</h3>
+            <div class="command">
+git pull
+# Télécharge ET applique
+# Ton code change
+            </div>
+            <div class="analogy" style="margin-top: 15px; font-size: 0.95em;">
+                <strong>Analogie :</strong> Recevoir un colis ET l'ouvrir directement
+            </div>
+        </div>
+    </div>
+
+    <div class="highlight" style="margin-top: 25px;">
+        <h3>🎯 Quand utiliser quoi ?</h3>
+        <ul style="margin-left: 20px; margin-top: 10px;">
+            <li><strong>git fetch</strong> → Quand tu veux voir ce qui a changé AVANT de l'intégrer</li>
+            <li><strong>git pull</strong> → Au quotidien, pour récupérer rapidement le travail de l'équipe</li>
+        </ul>
+    </div>
+
+    <div class="highlight" style="margin-top: 15px; background: #e8f5e9; border-left-color: #4caf50;">
+        <p><strong>💡 En résumé :</strong></p>
+        <div class="command" style="margin-top: 10px; font-size: 1em;">
+git pull = git fetch + git merge
+        </div>
+    </div>
+</div>
       <!-- Slide : Git pull -->
       <div class="slide">
         <div
@@ -1331,6 +1381,67 @@
           </p>
         </div>
       </div>
+
+      <!-- Slide : Git Merge avec Github -->
+<div class="slide">
+    <div class="section-badge" style="background: linear-gradient(135deg, #10b981 0%, #047857 100%);">PARTIE 2 - Github</div>
+    <h2><span class="emoji">🔀</span>Git Merge avec Github</h2>
+    
+    <div class="analogy">
+        <strong>Rappel :</strong> Tu connais déjà git merge depuis la Partie 1 !<br>
+        Maintenant, on l'utilise avec Github.
+    </div>
+
+    <div class="two-columns" style="margin-top: 30px;">
+        <div class="steps">
+            <h3>🏠 Merge LOCAL (Partie 1)</h3>
+            <div class="command">
+# Fusionner des branches locales
+git checkout main
+git merge ma-branche
+            </div>
+            <p style="margin-top: 10px; font-size: 0.95em;">✅ Tout se passe sur ton ordinateur</p>
+        </div>
+
+        <div class="steps">
+            <h3>☁️ Merge DISTANT (Partie 2)</h3>
+            <div class="command">
+# Fusionner depuis Github
+git fetch
+git merge origin/main
+            </div>
+            <p style="margin-top: 10px; font-size: 0.95em;">✅ Tu intègres le travail des autres</p>
+        </div>
+    </div>
+
+    <div class="highlight" style="margin-top: 25px;">
+        <h3>🎯 Comprendre "origin/main" :</h3>
+        <ul style="margin-left: 20px; margin-top: 10px;">
+            <li><strong>main</strong> = Ta branche locale (sur ton ordi)</li>
+            <li><strong>origin/main</strong> = La branche sur Github</li>
+            <li><strong>origin</strong> = Surnom pour ton dépôt Github</li>
+        </ul>
+    </div>
+
+    <div class="highlight" style="margin-top: 20px; background: #e8f5e9; border-left-color: #4caf50;">
+        <h3>💡 Workflow complet :</h3>
+        <div class="command" style="margin-top: 10px; font-size: 1em;">
+# Méthode manuelle (contrôle total)
+git fetch              # 1. Télécharger
+git diff main origin/main  # 2. Voir les différences
+git merge origin/main  # 3. Fusionner si OK
+
+# Méthode rapide (automatique)
+git pull              # fetch + merge en une commande
+        </div>
+    </div>
+
+    <div class="highlight" style="margin-top: 15px; background: #fff3cd; border-left-color: #ffc107;">
+        <p><strong>⚠️ Important :</strong></p>
+        <p style="margin-top: 10px;">Le merge avec Github peut créer des conflits si toi ET un collègue avez modifié les mêmes lignes !</p>
+        <p style="margin-top: 5px;">→ On verra ça dans la slide "Gérer les Conflits"</p>
+    </div>
+</div>
 
       <!-- Slide : Git clone -->
       <div class="slide">
