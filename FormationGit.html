@@ -175,15 +175,7 @@
             margin-bottom: 10px;
         }
 
-        .controls {
-            position: fixed;
-            bottom: 40px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 15px;
-            z-index: 1000;
-        }
+      
 
         button {
             background: white;
@@ -395,6 +387,97 @@
             .keyboard-hint {
                 display: none;
             }
+
+            /* 1. FLÈCHES DE NAVIGATION - Colorées et moderne */
+.arrow {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.arrow:hover:not(.disabled) {
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+}
+
+/* 2. SLIDE DE COUVERTURE - Dégradé coloré */
+.slide:first-child {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+}
+
+.slide:first-child h1,
+.slide:first-child .subtitle {
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+/* 3. BADGES DE SECTION - Couleurs variées */
+.section-badge {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.practice-badge {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.warning-badge {
+    background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+}
+
+/* 4. COMMANDES GIT - Fond coloré */
+.command {
+    background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+    border-left: 4px solid #667eea;
+    box-shadow: 0 2px 10px rgba(102, 126, 234, 0.1);
+}
+
+/* 5. CHECKPOINTS - Vert vibrant */
+.checkpoint {
+    background: linear-gradient(135deg, #11998e15 0%, #38ef7d15 100%);
+    border-left: 4px solid #11998e;
+}
+
+/* 6. INFO BOX - Bleu ciel */
+.info-box {
+    background: linear-gradient(135deg, #4facfe15 0%, #00f2fe15 100%);
+    border-left: 4px solid #4facfe;
+}
+
+/* 7. WARNING BOX - Orange/Rouge */
+.warning-box {
+    background: linear-gradient(135deg, #fa709a15 0%, #fee14015 100%);
+    border-left: 4px solid #fa709a;
+}
+
+/* 8. FEEDBACK - Colorés selon le type */
+.feedback {
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+.feedback:contains("✅") {
+    background: linear-gradient(135deg, #11998e15 0%, #38ef7d15 100%);
+    color: #11998e;
+}
+
+/* 9. TITRES H2 - Dégradé de texte */
+h2 {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    border-bottom: 2px solid #667eea;
+}
+
+/* 10. NUMÉRO DE SLIDE - Coloré */
+.slide-number {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+}
         }
     </style>
 </head>
@@ -406,9 +489,7 @@
     <div class="arrow-nav arrow-left" id="prevArrow" onclick="previousSlide()">‹</div>
     <div class="arrow-nav arrow-right" id="nextArrow" onclick="nextSlide()">›</div>
 
-    <div class="keyboard-hint">
-        Utilisez les flèches ← → ou cliquez sur les côtés
-    </div>
+ 
 
     <div class="slide-container">
         
@@ -2088,10 +2169,7 @@ git clone URL
 
     </div>
 
-    <div class="controls">
-        <button onclick="previousSlide()">← Précédent</button>
-        <button onclick="nextSlide()">Suivant →</button>
-    </div>
+ 
 
     <script>
         let currentSlide = 0;
