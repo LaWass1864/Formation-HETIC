@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Écosystème Informatique - Windows</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            overflow: hidden;
+        }
+        
+        .slide-container {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+        }
+        
+        .slide {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            padding: 50px;
+            max-width: 1400px;
+            width: 100%;
+            height: 85vh;
+            display: none;
+            overflow-y: auto;
+            animation: fadeIn 0.5s ease-in;
+        }
+        
+        .slide.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        h1 {
+            font-size: 3rem;
+            color: #667eea;
+            margin-bottom: 20px;
+        }
+        
+        h2 {
+            font-size: 2.2rem;
+            color: #667eea;
+            margin-bottom: 25px;
+            border-bottom: 4px solid #667eea;
+            padding-bottom: 15px;
+        }
+        
+        h3 {
+            font-size: 1.6rem;
+            color: #764ba2;
+            margin: 20px 0 10px 0;
+        }
+        
+        p, li {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 12px;
+        }
+        
+        ul, ol {
+            margin-left: 35px;
+            margin-bottom: 15px;
+        }
+        
+        .center {
+            text-align: center;
+        }
+        
+        .warning {
+            background: #fff3cd;
+            border-left: 5px solid #ffc107;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        
+        .success {
+            background: #d4edda;
+            border-left: 5px solid #28a745;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        
+        .danger {
+            background: #f8d7da;
+            border-left: 5px solid #dc3545;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        
+        .info {
+            background: #d1ecf1;
+            border-left: 5px solid #17a2b8;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        
+        .navigation {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 20px;
+            z-index: 1000;
+        }
+        
+        button {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        button:hover:not(:disabled) {
+            background: #764ba2;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(118, 75, 162, 0.4);
+        }
+        
+        button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            opacity: 0.5;
+        }
+        
+        .slide-number {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            background: rgba(255,255,255,0.95);
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            color: #667eea;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+        
+        code {
+            background: #f4f4f4;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            color: #e83e8c;
+            font-size: 1.1rem;
+        }
+        
+        .columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin: 20px 0;
+        }
+        
+        .box {
+            border: 3px solid #667eea;
+            padding: 20px;
+            border-radius: 10px;
+            background: #f8f9fa;
+        }
+        
+        pre {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        
+        strong {
+            color: #667eea;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-number">
+        Slide <span id="current">1</span> / <span id="total">30</span>
+    </div>
+    
+    <div class="slide-container">
+        <!-- SLIDE 1 -->
+        <div class="slide active">
+            <div style="text-align: center; padding: 120px 0;">
+                <h1 style="font-size: 4.5rem; margin-bottom: 40px;">ÉCOSYSTÈME INFORMATIQUE</h1>
+                <p style="font-size: 2rem; color: #666; margin-bottom: 50px;">Formation HETIC - Windows/Linux</p>
+                <p style="font-size: 1.8rem; color: #764ba2; font-weight: bold;">Wassila AMOURA</p>
+                <p style="font-size: 1.5rem; color: #666;">15/12/2025</p>
+            </div>
+        </div>
+
+        <!-- SLIDE 2 -->
+        <div class="slide">
+            <h2>🎯 OBJECTIFS</h2>
+            <p style="font-size: 1.4rem; margin-bottom: 30px;">À la fin de cette session, vous saurez :</p>
+            <ul style="font-size: 1.3rem; line-height: 2.2;">
+                <li>✓ Naviguer dans votre ordinateur (arborescence)</li>
+                <li>✓ Trouver et organiser vos fichiers</li>
+                <li>✓ Configurer VS Code correctement</li>
+                <li>✓ Utiliser Live Server pour voir vos changements</li>
+                <li>✓ Publier votre code sur GitHub</li>
+                <li>✓ Éviter les erreurs qui font perdre du temps</li>
+            </ul>
+            <div class="warning" style="margin-top: 50px; text-align: center;">
+                <p style="font-size: 1.6rem;"><strong>⚠️ On part de ZÉRO - aucune question n'est bête</strong></p>
+            </div>
+        </div>
+
+        <!-- SLIDE 3 -->
+        <div class="slide">
+            <h2>📄 QU'EST-CE QU'UN FICHIER ?</h2>
+            <p style="font-size: 1.5rem; margin-bottom: 30px;">Un document unique sur votre ordinateur<br>→ <strong>Comme une feuille de papier</strong></p>
+            <h3>Exemples :</h3>
+            <ul style="font-size: 1.3rem; margin-bottom: 40px;">
+                <li>Une photo : <code>chat.jpg</code></li>
+                <li>Un document texte : <code>lettre.txt</code></li>
+                <li>Une page web : <code>index.html</code></li>
+                <li>Une chanson : <code>musique.mp3</code></li>
+            </ul>
+            <div class="info">
+                <h3>Un fichier a :</h3>
+                <ul style="font-size: 1.3rem;">
+                    <li>Un <strong>NOM</strong> : index</li>
+                    <li>Une <strong>EXTENSION</strong> : .html</li>
+                    <li>Nom complet : <code>index.html</code></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- SLIDE 4 -->
+        <div class="slide">
+            <h2>📁 QU'EST-CE QU'UN DOSSIER ?</h2>
+            <p style="font-size: 1.5rem; margin-bottom: 30px;">Une "boîte" qui contient des fichiers<br>→ <strong>Comme un tiroir ou un classeur</strong></p>
+            <h3>Pourquoi ?</h3>
+            <ul style="font-size: 1.3rem; margin-bottom: 30px;">
+                <li>Pour <strong>ORGANISER</strong> vos fichiers</li>
+                <li>Au lieu de 1000 fichiers en vrac</li>
+            </ul>
+            <h3>Exemples :</h3>
+            <ul style="font-size: 1.3rem; margin-bottom: 30px;">
+                <li>Dossier "Photos" → vos photos</li>
+                <li>Dossier "Cours" → vos documents</li>
+                <li>Dossier "MesProjetsWeb" → vos projets</li>
+            </ul>
+            <div class="success">
+                <p style="font-size: 1.3rem;"><strong>Reconnaître un dossier :</strong></p>
+                <ul style="font-size: 1.3rem;">
+                    <li>Icône : 📁 (dossier jaune)</li>
+                    <li>Pas d'extension</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- SLIDE 5 -->
+        <div class="slide">
+            <h2>DIFFÉRENCE FICHIER / DOSSIER</h2>
+            <div class="columns">
+                <div class="box">
+                    <h3>📄 FICHIER</h3>
+                    <ul style="font-size: 1.2rem;">
+                        <li>Contient des informations (texte, code, image...)</li>
+                        <li>On l'OUVRE pour voir/modifier</li>
+                        <li>A une extension (.html .css .jpg)</li>
+                    </ul>
+                </div>
+                <div class="box">
+                    <h3>📁 DOSSIER</h3>
+                    <ul style="font-size: 1.2rem;">
+                        <li>Contient d'autres fichiers ou dossiers</li>
+                        <li>On l'OUVRE pour voir ce qu'il y a dedans</li>
+                        <li>Pas d'extension</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="info" style="margin-top: 30px; text-align: center;">
+                <h3>ANALOGIE :</h3>
+                <p style="font-size: 1.4rem;">Fichier = feuille de papier<br>Dossier = classeur qui contient des feuilles</p>
+            </div>
+        </div>
+
+        <!-- SLIDE 6 -->
+        <div class="slide">
+            <h2>🖱️ CLIC, DOUBLE-CLIC, CLIC DROIT</h2>
+            <div class="box" style="margin-bottom: 20px;">
+                <h3>CLIC (gauche, 1 fois)</h3>
+                <p style="font-size: 1.3rem;">→ Sélectionner quelque chose<br>→ Le fichier devient bleu</p>
+            </div>
+            <div class="box" style="margin-bottom: 20px;">
+                <h3>DOUBLE-CLIC (gauche, 2 fois rapide)</h3>
+                <p style="font-size: 1.3rem;">→ Ouvrir quelque chose<br>→ Le dossier ou fichier s'ouvre</p>
+                <div class="warning" style="margin-top: 15px;">
+                    <p>⚠️ Si trop lent = ne marche pas</p>
+                </div>
+            </div>
+            <div class="box">
+                <h3>CLIC DROIT (droit, 1 fois)</h3>
+                <p style="font-size: 1.3rem;">→ Ouvre un menu d'options<br>→ "Ouvrir", "Supprimer", "Renommer"...</p>
+            </div>
+            <div class="success" style="margin-top: 30px; text-align: center;">
+                <p style="font-size: 1.4rem;"><strong>ASTUCE : Pas sûr ? → Essayez clic droit</strong></p>
+            </div>
+        </div>
+
+        <!-- SLIDE 7 -->
+        <div class="slide">
+            <h2>⚠️ VOTRE NOM ≠ LE NOM DU PROF</h2>
+            <p style="font-size: 1.4rem; margin-bottom: 30px;">Chaque personne a <strong>SON propre nom d'utilisateur</strong></p>
+            <div class="box" style="margin-bottom: 20px;">
+                <h3>MÉTHODE 1 (la plus simple) :</h3>
+                <ol style="font-size: 1.2rem;">
+                    <li>Ouvrir l'Explorateur (Windows + E)</li>
+                    <li>Barre latérale gauche → icône 👤</li>
+                    <li>C'est VOTRE nom</li>
+                </ol>
+            </div>
+            <div class="box">
+                <h3>MÉTHODE 2 :</h3>
+                <ol style="font-size: 1.2rem;">
+                    <li>Explorateur → Ce PC → Disque C: → Users</li>
+                    <li>Chercher le dossier avec VOTRE prénom</li>
+                    <li>C'est celui-là</li>
+                </ol>
+            </div>
+            <div class="warning" style="margin-top: 25px;">
+                <p style="font-size: 1.3rem;"><strong>Dans mes exemples : "Latitude" (moi, le prof)</strong><br>VOUS devez utiliser VOTRE nom !</p>
+            </div>
+            <div class="success" style="margin-top: 20px; text-align: center;">
+                <p style="font-size: 1.5rem;"><strong>🎯 EXERCICE : Notez votre nom sur un papier</strong></p>
+            </div>
+        </div>
+
+        <!-- SLIDE 8 -->
+        <div class="slide">
+            <h2>🛣️ UN CHEMIN (PATH)</h2>
+            <p style="font-size: 1.5rem; margin-bottom: 30px;">L'<strong>ADRESSE</strong> d'un fichier ou dossier → Comme l'adresse d'une maison</p>
+            <div class="info">
+                <h3>Exemple :</h3>
+                <code style="font-size: 1.2rem; display: block; padding: 15px; background: #2d2d2d; color: #f8f8f2; border-radius: 8px;">C:\Users\[VOTRE_NOM]\Documents\MesProjetsWeb\index.html</code>
+            </div>
+            <h3 style="margin-top: 30px;">Comment le lire ? De GAUCHE À DROITE :</h3>
+            <ul style="font-size: 1.2rem;">
+                <li><code>C:\</code> → Disque dur</li>
+                <li><code>Users\</code> → Dossier utilisateurs</li>
+                <li><code>[VOTRE_NOM]\</code> → Votre dossier</li>
+                <li><code>Documents\</code> → Dossier Documents</li>
+                <li><code>MesProjetsWeb\</code> → Votre projet</li>
+                <li><code>index.html</code> → Le fichier</li>
+            </ul>
+            <div class="success" style="margin-top: 30px;">
+                <p style="font-size: 1.3rem;">Le symbole <code>\</code> (backslash) = "dans"<br><code>C:\Users\Marie</code> = "C dans Users dans Marie"</p>
+            </div>
+        </div>
+
+        <!-- SLIDE 9 -->
+        <div class="slide">
+            <h2>VOIR LES EXTENSIONS</h2>
+            <div class="info">
+                <h3>C'est quoi une extension ?</h3>
+                <p style="font-size: 1.3rem;">→ Les 3-4 lettres après le point : <code>.html</code> <code>.css</code> <code>.js</code></p>
+            </div>
+            <h3 style="margin-top: 30px;">Pourquoi c'est important ?</h3>
+            <ul style="font-size: 1.2rem; margin-bottom: 30px;">
+                <li><code>index.html</code> ≠ <code>index.txt</code> (2 fichiers différents !)</li>
+                <li>Windows <strong>CACHE</strong> les extensions par défaut</li>
+                <li>Vous voyez juste "index" → impossible de savoir</li>
+            </ul>
+            <div class="success">
+                <h3>COMMENT ACTIVER :</h3>
+                <ol style="font-size: 1.2rem;">
+                    <li>Explorateur (Windows + E)</li>
+                    <li>Cliquer "Affichage" (en haut)</li>
+                    <li>Cliquer "Afficher"</li>
+                    <li>COCHER "Extensions de noms de fichiers"</li>
+                    <li>COCHER "Éléments masqués"</li>
+                </ol>
+                <p style="margin-top: 20px; font-size: 1.3rem;"><strong>✅ Maintenant vous voyez index.html</strong></p>
+            </div>
+        </div>
+
+        <!-- SLIDE 10 -->
+        <div class="slide">
+            <h2>EXERCICE : EXPLORER VOTRE PC</h2>
+            <p style="font-size: 1.4rem; margin-bottom: 25px;"><strong>TOUS ENSEMBLE, étape par étape :</strong></p>
+            <ol style="font-size: 1.2rem; line-height: 2;">
+                <li>Ouvrir l'Explorateur (Windows + E)</li>
+                <li>Cliquer "Ce PC" (barre latérale gauche)<br><em>→ Vous voyez les disques : C:, D:...</em></li>
+                <li>Double-clic sur "Disque local (C:)"<br><em>→ Vous voyez : Program Files, Users, Windows...</em></li>
+                <li>Double-clic sur "Users"<br><em>→ Dossiers de tous les utilisateurs</em></li>
+                <li>Double-clic sur VOTRE nom<br><em>→ Votre "maison" : Bureau, Documents, Téléchargements...</em></li>
+                <li>Regarder la barre d'adresse en haut<br><em>→ <code>C:\Users\[VOTRE_NOM]</code></em></li>
+            </ol>
+            <div class="success" style="margin-top: 40px; text-align: center;">
+                <p style="font-size: 1.6rem;"><strong>🎯 PAUSE : Tout le monde a réussi ?</strong></p>
+            </div>
+        </div>
+
+        <!-- Continue avec les autres slides... -->
+        <!-- Pour gagner de la place, je vais créer les slides restantes de manière plus condensée -->
+
+        <!-- SLIDE 11 -->
+        <div class="slide">
+            <h2>OÙ SONT VOS FICHIERS ?</h2>
+            <div class="columns">
+                <div class="box" style="border-color: #28a745; background: #d4edda;">
+                    <h3>DISQUE LOCAL (C:)</h3>
+                    <p>= Sur votre ordinateur</p>
+                    <ul style="font-size: 1.2rem;">
+                        <li>✅ Rapide</li>
+                        <li>✅ Toujours accessible</li>
+                        <li>✅ Parfait pour le code</li>
+                    </ul>
+                </div>
+                <div class="box" style="border-color: #dc3545; background: #f8d7da;">
+                    <h3>OneDrive</h3>
+                    <p>= Dans le cloud</p>
+                    <ul style="font-size: 1.2rem;">
+                        <li>⚠️ Synchronisation</li>
+                        <li>⚠️ Peut être lent</li>
+                        <li>❌ JAMAIS pour le code</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="success" style="margin-top: 40px; text-align: center;">
+                <p style="font-size: 1.8rem;"><strong>🎯 RÈGLE : Code = TOUJOURS en Local</strong></p>
+            </div>
+        </div>
+
+        <!-- SLIDE 12-30 avec contenu condensé pour tenir dans l'artifact -->
+        <div class="slide">
+            <h2>VÉRIFIER OÙ VOUS ÊTES</h2>
+            <div class="box" style="margin-bottom: 20px;">
+                <h3>1️⃣ BARRE D'ADRESSE</h3>
+                <p>❌ <code>C:\Users\nom\OneDrive\...</code> = OneDrive<br>✅ <code>C:\Users\nom\Documents\...</code> = Local</p>
+            </div>
+            <div class="box" style="margin-bottom: 20px;">
+                <h3>2️⃣ ICÔNES</h3>
+                <p>❌ Nuage bleu/vert = OneDrive<br>✅ Pas d'icône = Local</p>
+            </div>
+            <div class="box">
+                <h3>3️⃣ BARRE LATÉRALE</h3>
+                <p>Si "OneDrive - Personnel" = vous y êtes</p>
+            </div>
+        </div>
+
+        <div class="slide">
+            <h2>⚠️ DANGER : BUREAU DANS OneDrive</h2>
+            <div class="danger">
+                <h3>CONSÉQUENCES :</h3>
+                <ul style="font-size: 1.3rem;">
+                    <li>❌ Lenteur extrême</li>
+                    <li>❌ npm install qui plante</li>
+                    <li>❌ Fichiers qui disparaissent</li>
+                    <li>❌ VS Code qui lag</li>
+                </ul>
+            </div>
+            <div class="success" style="margin-top: 40px; text-align: center;">
+                <h3>SOLUTION :</h3>
+                <p style="font-size: 1.6rem;"><strong>NE JAMAIS mettre de code sur le Bureau !</strong></p>
+            </div>
+        </div>
+
+        <div class="slide">
+            <h2>CRÉER MesProjetsWeb</h2>
+            <p style="font-size: 1.3rem; margin-bottom: 25px;"><strong>TOUS ENSEMBLE :</strong></p>
+            <ol style="font-size: 1.2rem; line-height: 2;">
+                <li>Explorateur (Windows + E)</li>
+                <li>Cliquer "Documents"</li>
+                <li>Clic DROIT → Nouveau → Dossier</li>
+                <li>Taper "MesProjetsWeb"</li>
+                <li>GLISSER vers "Accès rapide"</li>
+            </ol>
+            <div class="success" style="margin-top: 30px;">
+                <p><code>C:\Users\[VOTRE_NOM]\Documents\MesProjetsWeb</code></p>
+            </div>
+            <div class="info" style="margin-top: 20px; text-align: center;">
+                <p style="font-size: 1.5rem;"><strong>🎯 Tout le monde a réussi ?</strong></p>
+            </div>
+        </div>
+
+        <div class="slide">
+            <h2>STRUCTURE D'UN PROJET</h2>
+            <pre style="font-size: 1.2rem; line-height: 1.8;">
+mon-projet/
+  ├── index.html       ← Page principale
+  ├── css/             ← Dossier styles
+  │   └── style.css
+  ├── js/              ← Dossier JavaScript
+  │   └── script.js
+  └── images/          ← Dossier images
+            </pre>
+            <div class="success" style="text-align: center;">
+                <p style="font-size: 1.5rem;"><strong>Chaque élément à sa place !</strong></p>
+            </div>
+        </div>
+
+        <div class="slide">
+            <h2>VS CODE : OUVRIR UN DOSSIER</h2>
+            <div class="danger">
+                <h3>❌ FAUX :</h3>
+                <p style="font-size: 1.3rem;">File → Open File → index.html</p>
+            </div>
+            <div class="success" style="margin-top: 30px;">
+                <h3>✅ CORRECT :</h3>
+                <p style="font-size: 1.3rem;">File → Open Folder → mon-projet</p>
+            </div>
+            <div class="info" style="margin-top: 40px;">
+                <h3>POURQUOI ?</h3>
+                <ul style="font-size: 1.2rem;">
+                    <li>VS Code voit TOUTE la structure</li>
+                    <li>Live Server fonctionne</li>
+                    <li>Git fonctionne</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="slide">
+            <h2>⚠️ POINT BLANC = PAS SAUVEGARDÉ</h2>
+            <div class="warning" style="text-align: center; padding: 40px;">
+                <p style="font-size: 2rem;"><strong>Point blanc ● dans l'onglet</strong></p>
+                <p style="font-size: 1.4rem;">= PAS sauvegardé</p>
+            </div>
+            <div class="success" style="margin-top: 40px; text-align: center;">
+                <p style="font-size: 1.8rem;"><strong>Ctrl + S après CHAQUE modification</strong></p>
+            </div>
+        </div>
+
+        <div class="slide">
+            <h2>AUTO-SAVE</h2>
+            <div class="box">
+                <h3>MÉTHODE 1 :</h3>
+                <ol style="font-size: 1.2rem;">
+                    <li>Cliquer "Fichier"</li>
+                    <li>Cliquer "Enregistrement automatique"</li>
+                    <li>Une coche ✓ apparaît</li>
+                </ol>
+            </div>
+            <div class="box" style="margin-top: 20px;">
+                <h3>MÉTHODE 2 :</h3>
+                <ol style="font-size: 1.2rem;">
+                    <li>Ctrl + ,</li>
+                    <li>Chercher "auto save"</li>
+                    <li>Sélectionner "afterDelay"</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="slide">
+            <h2>EXTENSIONS VS CODE</h2>
+            <div class="success">
+                <h3>OBLIGATOIRES :</h3>
+                <ol style="font-size: 1.3rem; line-height: 2;">
+                    <li><strong>Live Server</strong> (Ritwick Dey)<br>→ Voir changements en temps réel</li>
+                    <li><strong>Prettier</strong><br>→ Formater le code</li>
+                    <li><strong>Auto Rename Tag</strong><br>→ Renommer balises HTML</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="slide">
+            <h2>LIVE
