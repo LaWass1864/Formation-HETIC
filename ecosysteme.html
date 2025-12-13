@@ -80,6 +80,16 @@
             margin-bottom: 15px;
         }
         
+        a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
         .center {
             text-align: center;
         }
@@ -185,6 +195,27 @@
             padding: 20px;
             border-radius: 10px;
             background: #f8f9fa;
+            margin-bottom: 15px;
+        }
+        
+        .link-box {
+            background: white;
+            border: 2px solid #667eea;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .link-box a {
+            font-size: 1.1rem;
+            display: inline-block;
+            padding: 8px 15px;
+            background: #667eea;
+            color: white;
+            border-radius: 5px;
         }
         
         pre {
@@ -204,7 +235,7 @@
 </head>
 <body>
     <div class="slide-number">
-        Slide <span id="current">1</span> / <span id="total">30</span>
+        Slide <span id="current">1</span> / <span id="total">37</span>
     </div>
     
     <div class="slide-container">
@@ -226,8 +257,8 @@
                 <li>✓ Naviguer dans votre ordinateur (arborescence)</li>
                 <li>✓ Trouver et organiser vos fichiers</li>
                 <li>✓ Configurer VS Code correctement</li>
-                <li>✓ Utiliser Live Server pour voir vos changements</li>
-                <li>✓ Publier votre code sur GitHub</li>
+                <li>✓ Utiliser les extensions et ressources importantes</li>
+                <li>✓ Valider votre code HTML et CSS</li>
                 <li>✓ Éviter les erreurs qui font perdre du temps</li>
             </ul>
             <div class="warning" style="margin-top: 50px; text-align: center;">
@@ -423,9 +454,6 @@
             </div>
         </div>
 
-        <!-- Continue avec les autres slides... -->
-        <!-- Pour gagner de la place, je vais créer les slides restantes de manière plus condensée -->
-
         <!-- SLIDE 11 -->
         <div class="slide">
             <h2>OÙ SONT VOS FICHIERS ?</h2>
@@ -454,9 +482,15 @@
             </div>
         </div>
 
-        <!-- SLIDE 12-30 avec contenu condensé pour tenir dans l'artifact -->
+        <!-- SLIDE 12: DÉSYNCHRONISER LE BUREAU DE OneDrive -->
         <div class="slide">
-            <h2>VÉRIFIER OÙ VOUS ÊTES</h2>
+            <h2>DÉSYNCHRONISER LE BUREAU DE OneDrive</h2>
+            <p style="font-size: 1.4rem; margin-bottom: 30px;"><strong>Pour que votre Bureau reste en LOCAL (hors OneDrive)</strong></p>
+            
+            <div class="info" style="margin-bottom: 30px;">
+                <h3>POURQUOI ?</h3>
+                <ul style="font-size: 1.2rem;">
+                    <li>Le Bureau synchronis
             <div class="box" style="margin-bottom: 20px;">
                 <h3>1️⃣ BARRE D'ADRESSE</h3>
                 <p>❌ <code>C:\Users\nom\OneDrive\...</code> = OneDrive<br>✅ <code>C:\Users\nom\Documents\...</code> = Local</p>
@@ -471,6 +505,7 @@
             </div>
         </div>
 
+        <!-- SLIDE 13 -->
         <div class="slide">
             <h2>⚠️ DANGER : BUREAU DANS OneDrive</h2>
             <div class="danger">
@@ -488,6 +523,7 @@
             </div>
         </div>
 
+        <!-- SLIDE 14 -->
         <div class="slide">
             <h2>CRÉER MesProjetsWeb</h2>
             <p style="font-size: 1.3rem; margin-bottom: 25px;"><strong>TOUS ENSEMBLE :</strong></p>
@@ -506,6 +542,7 @@
             </div>
         </div>
 
+        <!-- SLIDE 15 -->
         <div class="slide">
             <h2>STRUCTURE D'UN PROJET</h2>
             <pre style="font-size: 1.2rem; line-height: 1.8;">
@@ -522,6 +559,7 @@ mon-projet/
             </div>
         </div>
 
+        <!-- SLIDE 16 -->
         <div class="slide">
             <h2>VS CODE : OUVRIR UN DOSSIER</h2>
             <div class="danger">
@@ -542,6 +580,7 @@ mon-projet/
             </div>
         </div>
 
+        <!-- SLIDE 17 -->
         <div class="slide">
             <h2>⚠️ POINT BLANC = PAS SAUVEGARDÉ</h2>
             <div class="warning" style="text-align: center; padding: 40px;">
@@ -553,37 +592,334 @@ mon-projet/
             </div>
         </div>
 
+        <!-- SLIDE 18 -->
         <div class="slide">
-            <h2>AUTO-SAVE</h2>
+            <h2>AUTO-SAVE (ENREGISTREMENT AUTOMATIQUE)</h2>
+            <p style="font-size: 1.4rem; margin-bottom: 30px;"><strong>Vos fichiers s'enregistrent AUTOMATIQUEMENT sans Ctrl+S !</strong></p>
+            
+            <div class="success" style="margin-bottom: 30px;">
+                <h3>POURQUOI C'EST UTILE ?</h3>
+                <ul style="font-size: 1.2rem;">
+                    <li>✅ Plus besoin de Ctrl + S tout le temps</li>
+                    <li>✅ Pas de risque d'oublier de sauvegarder</li>
+                    <li>✅ Live Server met à jour automatiquement</li>
+                    <li>✅ PARFAIT pour les débutants</li>
+                </ul>
+            </div>
+            
             <div class="box">
-                <h3>MÉTHODE 1 :</h3>
+                <h3>MÉTHODE 1 (la plus simple) :</h3>
                 <ol style="font-size: 1.2rem;">
-                    <li>Cliquer "Fichier"</li>
+                    <li>Cliquer "Fichier" (en haut à gauche)</li>
                     <li>Cliquer "Enregistrement automatique"</li>
                     <li>Une coche ✓ apparaît</li>
+                    <li>C'est activé ! 🎉</li>
                 </ol>
             </div>
+            
             <div class="box" style="margin-top: 20px;">
-                <h3>MÉTHODE 2 :</h3>
+                <h3>MÉTHODE 2 (via paramètres) :</h3>
                 <ol style="font-size: 1.2rem;">
-                    <li>Ctrl + ,</li>
+                    <li>Ctrl + , (ouvrir les paramètres)</li>
                     <li>Chercher "auto save"</li>
                     <li>Sélectionner "afterDelay"</li>
+                    <li>Vous pouvez changer le délai (par défaut 1 seconde)</li>
                 </ol>
+            </div>
+            
+            <div class="info" style="margin-top: 20px;">
+                <p style="font-size: 1.3rem;"><strong>💡 CONSEIL :</strong> Activez l'auto-save dès le début, c'est un game-changer!</p>
             </div>
         </div>
 
+        <!-- SLIDE 19: SITES WEB IMPORTANTS -->
         <div class="slide">
-            <h2>EXTENSIONS VS CODE</h2>
+            <h2>🌐 SITES WEB IMPORTANTS</h2>
+            
+            <div class="link-box">
+                <div>
+                    <h3>MDN - Mozilla Developer Network</h3>
+                    <p>LA documentation officielle HTML/CSS/JavaScript</p>
+                </div>
+                <a href="https://developer.mozilla.org/fr/" target="_blank">Aller</a>
+            </div>
+            
+            <div class="link-box">
+                <div>
+                    <h3>HTML Validator</h3>
+                    <p>Vérifier que votre HTML est correct</p>
+                </div>
+                <a href="https://validator.w3.org/#validate_by_input" target="_blank">Aller</a>
+            </div>
+            
+            <div class="link-box">
+                <div>
+                    <h3>CSS Validator</h3>
+                    <p>Vérifier que votre CSS est correct</p>
+                </div>
+                <a href="https://jigsaw.w3.org/css-validator/#validate_by_input" target="_blank">Aller</a>
+            </div>
+            
+            <div class="link-box">
+                <div>
+                    <h3>Google Fonts</h3>
+                    <p>Télécharger des polices gratuites</p>
+                </div>
+                <a href="https://fonts.google.com/" target="_blank">Aller</a>
+            </div>
+            
+            <div class="link-box">
+                <div>
+                    <h3>Can I Use</h3>
+                    <p>Vérifier compatibilité CSS/HTML</p>
+                </div>
+                <a href="https://caniuse.com/" target="_blank">Aller</a>
+            </div>
+        </div>
+
+        <!-- SLIDE 20: PLUS DE RESSOURCES -->
+        <div class="slide">
+            <h2>📚 PLUS DE RESSOURCES WEB</h2>
+            
+            <div class="link-box">
+                <div>
+                    <h3>W3Schools</h3>
+                    <p>Tutoriels simples avec exemples interactifs</p>
+                </div>
+                <a href="https://www.w3schools.com/" target="_blank">Aller</a>
+            </div>
+            
+            <div class="link-box">
+                <div>
+                    <h3>CodeShare</h3>
+                    <p>Partager du code en temps réel avec d'autres</p>
+                </div>
+                <a href="https://codeshare.io/" target="_blank">Aller</a>
+            </div>
+            
+            <div class="success" style="margin-top: 40px; text-align: center;">
+                <h3>À BOOKMARKER !</h3>
+                <p style="font-size: 1.4rem;">Ces sites vont vous sauver la vie 😄</p>
+            </div>
+        </div>
+
+        <!-- SLIDE 21: EXTENSION CHROME -->
+        <div class="slide">
+            <h2>🔧 EXTENSION CHROME</h2>
+            
+            <div class="box">
+                <h3>CSS Peeper</h3>
+                <p><strong>À quoi ça sert ?</strong></p>
+                <ul>
+                    <li>Voir le CSS d'un site web</li>
+                    <li>Récupérer les couleurs utilisées</li>
+                    <li>Voir les polices et propriétés CSS</li>
+                    <li>Parfait pour apprendre comment les sites sont faits</li>
+                </ul>
+            </div>
+            
+            <h3 style="margin-top: 30px;">Comment l'installer ?</h3>
+            <ol style="font-size: 1.2rem; line-height: 2.2;">
+                <li>Aller sur Chrome Web Store</li>
+                <li>Chercher "CSS Peeper"</li>
+                <li>Cliquer "Ajouter à Chrome"</li>
+                <li>L'icône apparaît à côté de la barre d'adresse</li>
+                <li>Cliquer dessus pour voir le CSS du site</li>
+            </ol>
+            
+            <div class="success" style="margin-top: 30px;">
+                <p style="font-size: 1.3rem;"><strong>💡 Utilisez CSS Peeper pour analyser vos sites préférés!</strong></p>
+            </div>
+        </div>
+
+        <!-- SLIDE 22: VS CODE EXTENSIONS 1 -->
+        <div class="slide">
+            <h2>⚡ EXTENSIONS VS CODE (1/2)</h2>
+            
+            <div class="box">
+                <h3>1️⃣ Live Server</h3>
+                <p><strong>À quoi ça sert ?</strong></p>
+                <ul style="margin-bottom: 15px;">
+                    <li>Voir vos changements en temps réel dans le navigateur</li>
+                    <li>Pas besoin de rafraîchir la page</li>
+                    <li>OBLIGATOIRE pour développer</li>
+                </ul>
+                <p><strong>Comment l'utiliser ?</strong></p>
+                <ul>
+                    <li>Clic droit sur index.html</li>
+                    <li>Sélectionner "Open with Live Server"</li>
+                    <li>Modifiez le code → la page se met à jour automatiquement</li>
+                </ul>
+            </div>
+            
+            <div class="box" style="margin-top: 20px;">
+                <h3>2️⃣ Auto Rename Tag</h3>
+                <p><strong>À quoi ça sert ?</strong></p>
+                <ul style="margin-bottom: 15px;">
+                    <li>Renommer automatiquement la balise fermante</li>
+                    <li>Quand on change la balise ouvrante</li>
+                </ul>
+                <p><strong>Exemple :</strong> <code>&lt;div&gt;</code> → <code>&lt;section&gt;</code><br>
+                Le <code>&lt;/div&gt;</code> devient automatiquement <code>&lt;/section&gt;</code></p>
+            </div>
+        </div>
+
+        <!-- SLIDE 23: VS CODE EXTENSIONS 2 -->
+        <div class="slide">
+            <h2>⚡ EXTENSIONS VS CODE (2/2)</h2>
+            
+            <div class="box">
+                <h3>3️⃣ HTML End Tag Labels</h3>
+                <p><strong>À quoi ça sert ?</strong></p>
+                <ul style="margin-bottom: 15px;">
+                    <li>Affiche le nom de la balise ouvrante à côté de la fermante</li>
+                    <li>Super utile avec beaucoup d'imbrication</li>
+                </ul>
+            </div>
+            
+            <div class="box" style="margin-top: 20px;">
+                <h3>4️⃣ Prettier</h3>
+                <p><strong>À quoi ça sert ?</strong></p>
+                <ul style="margin-bottom: 15px;">
+                    <li>Formater automatiquement votre code</li>
+                    <li>Indentation correcte</li>
+                    <li>Code plus lisible</li>
+                </ul>
+                <p><strong>Comment l'utiliser ?</strong></p>
+                <ul>
+                    <li>Ctrl + Shift + P</li>
+                    <li>Taper "Format Document"</li>
+                    <li>Appuyer sur Entrée</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- SLIDE 24: INSTALLER LES EXTENSIONS -->
+        <div class="slide">
+            <h2>📦 INSTALLER LES EXTENSIONS VS CODE</h2>
+            
+            <h3>MÉTHODE 1 : Via le Marketplace</h3>
+            <ol style="font-size: 1.2rem; line-height: 2.2; margin-bottom: 30px;">
+                <li>Ouvrir VS Code</li>
+                <li>Cliquer sur l'icône "Extensions" à gauche</li>
+                <li>Chercher l'extension (ex: "Live Server")</li>
+                <li>Cliquer sur "Install"</li>
+                <li>Attendre que ce soit installé</li>
+            </ol>
+            
+            <h3>MÉTHODE 2 : Ligne de commande</h3>
+            <pre>code --install-extension ritwickdey.LiveServer
+code --install-extension formulahendry.auto-rename-tag
+code --install-extension mhtmltemplates.html-end-tag-labels
+code --install-extension esbenp.prettier-vscode</pre>
+            
             <div class="success">
-                <h3>OBLIGATOIRES :</h3>
-                <ol style="font-size: 1.3rem; line-height: 2;">
-                    <li><strong>Live Server</strong> (Ritwick Dey)<br>→ Voir changements en temps réel</li>
-                    <li><strong>Prettier</strong><br>→ Formater le code</li>
-                    <li><strong>Auto Rename Tag</strong><br>→ Renommer balises HTML</li>
-                </ol>
+                <p style="font-size: 1.3rem;"><strong>✅ Redémarrez VS Code après installation</strong></p>
             </div>
         </div>
 
+        <!-- SLIDE 25: GÉRER LES SUGGESTIONS -->
         <div class="slide">
-            <h2>LIVE
+            <h2>⚙️ GÉRER LES SUGGESTIONS DANS VS CODE</h2>
+            
+            <h3>DÉSACTIVER LES SUGGESTIONS</h3>
+            <ol style="font-size: 1.2rem; line-height: 2.2; margin-bottom: 30px;">
+                <li>Ctrl + , (ouvrir les paramètres)</li>
+                <li>Chercher "autocomplete" ou "suggestions"</li>
+                <li>Trouver "Editor: Accept Suggestion On Commit Character"</li>
+                <li>Décocher la case</li>
+            </ol>
+            
+            <h3>RÉACTIVER LES SUGGESTIONS</h3>
+            <ol style="font-size: 1.2rem; line-height: 2.2; margin-bottom: 30px;">
+                <li>Même chemin que ci-dessus</li>
+                <li>COCHER la case</li>
+            </ol>
+            
+            <div class="info">
+                <h3>CONSEIL :</h3>
+                <ul style="font-size: 1.2rem;">
+                    <li>Pour les novices : DÉSACTIVER (c'est distrayant)</li>
+                    <li>Plus tard : Les réactiver pour gagner du temps</li>
+                    <li>Vous pouvez forcer les suggestions avec Ctrl + Espace</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- SLIDE 26: RÉSUMÉ FINAL -->
+        <div class="slide">
+            <h2>📋 RÉSUMÉ - LES ESSENTIELS</h2>
+            
+            <div class="success">
+                <h3>Sites web à bookmarker :</h3>
+                <ul style="font-size: 1.2rem;">
+                    <li>MDN → Documentation</li>
+                    <li>HTML Validator + CSS Validator → Vérifier le code</li>
+                    <li>Google Fonts → Polices</li>
+                    <li>CodeShare → Partager du code</li>
+                </ul>
+            </div>
+            
+            <div class="success" style="margin-top: 20px;">
+                <h3>Extension Chrome :</h3>
+                <ul style="font-size: 1.2rem;">
+                    <li>CSS Peeper → Voir le CSS des sites</li>
+                </ul>
+            </div>
+            
+            <div class="success" style="margin-top: 20px;">
+                <h3>Extensions VS Code (OBLIGATOIRES) :</h3>
+                <ul style="font-size: 1.2rem;">
+                    <li>Live Server → Voir les changements en direct</li>
+                    <li>Auto Rename Tag → Renommer balises</li>
+                    <li>HTML End Tag Labels → Voir quel tag ferme</li>
+                    <li>Prettier → Formater le code</li>
+                </ul>
+            </div>
+            
+            <div class="warning" style="margin-top: 30px; text-align: center;">
+                <p style="font-size: 1.6rem;"><strong>🎯 INSTALLEZ TOUT ÇA MAINTENANT !</strong></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="navigation">
+        <button id="prev" onclick="prevSlide()">← Précédent</button>
+        <button id="next" onclick="nextSlide()">Suivant →</button>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+        
+        document.getElementById('total').textContent = totalSlides;
+        
+        function showSlide(n) {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (n + totalSlides) % totalSlides;
+            slides[currentSlide].classList.add('active');
+            document.getElementById('current').textContent = currentSlide + 1;
+            
+            document.getElementById('prev').disabled = currentSlide === 0;
+            document.getElementById('next').disabled = currentSlide === totalSlides - 1;
+        }
+        
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+        
+        function prevSlide() {
+            showSlide(currentSlide - 1);
+        }
+        
+        // Clavier
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') nextSlide();
+            if (e.key === 'ArrowLeft') prevSlide();
+        });
+        
+        showSlide(0);
+    </script>
+</body>
+</html>
