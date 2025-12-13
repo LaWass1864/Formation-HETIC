@@ -677,7 +677,109 @@ mon-projet/
                 <a href="https://caniuse.com/" target="_blank">Aller</a>
             </div>
         </div>
-
+<!-- SLIDE GIT WORKFLOW -->
+        <div class="slide">
+            <h2>🔀 GIT WORKFLOW DANS VS CODE</h2>
+            
+            <p style="font-size: 1.25rem; margin-bottom: 20px;"><strong>Connecter GitHub à VS Code et gérer votre code en 4 étapes</strong></p>
+            
+            <!-- LE FLUX COMPLET -->
+            <div style="background: white; border: 3px dashed #667eea; padding: 20px; border-radius: 10px; margin: 20px 0; text-align: center; font-size: 1.1rem;">
+                <div style="display: inline-block; background: #667eea; color: white; padding: 12px 20px; border-radius: 8px; margin: 10px 5px; font-weight: bold;">1️⃣ Se connecter</div>
+                <div style="display: inline-block; margin: 0 10px; color: #667eea; font-size: 1.5rem; font-weight: bold;">→</div>
+                <div style="display: inline-block; background: #667eea; color: white; padding: 12px 20px; border-radius: 8px; margin: 10px 5px; font-weight: bold;">2️⃣ Ajouter repo</div>
+                <div style="display: inline-block; margin: 0 10px; color: #667eea; font-size: 1.5rem; font-weight: bold;">→</div>
+                <div style="display: inline-block; background: #667eea; color: white; padding: 12px 20px; border-radius: 8px; margin: 10px 5px; font-weight: bold;">3️⃣ Commiter</div>
+                <div style="display: inline-block; margin: 0 10px; color: #667eea; font-size: 1.5rem; font-weight: bold;">→</div>
+                <div style="display: inline-block; background: #667eea; color: white; padding: 12px 20px; border-radius: 8px; margin: 10px 5px; font-weight: bold;">4️⃣ Push</div>
+            </div>
+            
+            <!-- ÉTAPE 1 -->
+            <div style="background: #f8f9fa; border-left: 5px solid #667eea; padding: 20px; border-radius: 8px; margin-bottom: 15px;">
+                <h3 style="margin-top: 0; color: #667eea;"><span style="display: inline-block; background: #667eea; color: white; width: 35px; height: 35px; border-radius: 50%; text-align: center; line-height: 35px; font-weight: bold; margin-right: 10px; font-size: 1.2rem;">1</span> SE CONNECTER À GITHUB</h3>
+                <ol style="font-size: 1.1rem;">
+                    <li>Cliquer sur votre compte (en bas à gauche de VS Code)</li>
+                    <li>Sélectionner "Sign in with GitHub"</li>
+                    <li>Un navigateur s'ouvre → autoriser VS Code</li>
+                    <li>Revenir à VS Code → vous êtes connecté ✅</li>
+                </ol>
+            </div>
+            
+            <!-- ÉTAPE 2 -->
+            <div style="background: #f8f9fa; border-left: 5px solid #764ba2; padding: 20px; border-radius: 8px; margin-bottom: 15px;">
+                <h3 style="margin-top: 0; color: #764ba2;"><span style="display: inline-block; background: #764ba2; color: white; width: 35px; height: 35px; border-radius: 50%; text-align: center; line-height: 35px; font-weight: bold; margin-right: 10px; font-size: 1.2rem;">2</span> AJOUTER UN REPO</h3>
+                <p><strong>Option A : Créer un nouveau repo localement</strong></p>
+                <ol style="font-size: 1.1rem; margin-bottom: 15px;">
+                    <li>Ouvrir votre dossier dans VS Code (File → Open Folder)</li>
+                    <li>Cliquer sur l'icône "Source Control" (à gauche)</li>
+                    <li>Cliquer "Initialize Repository"</li>
+                    <li>Git est activé ! 🎉</li>
+                </ol>
+                <p><strong>Option B : Cloner un repo existant</strong></p>
+                <ol style="font-size: 1.1rem;">
+                    <li>Ctrl + Shift + P → "Clone"</li>
+                    <li>Coller l'URL du repo GitHub</li>
+                    <li>Choisir où sauvegarder</li>
+                    <li>Appuyer sur Entrée</li>
+                </ol>
+            </div>
+            
+            <!-- ÉTAPE 3 -->
+            <div style="background: #f8f9fa; border-left: 5px solid #667eea; padding: 20px; border-radius: 8px; margin-bottom: 15px;">
+                <h3 style="margin-top: 0; color: #667eea;"><span style="display: inline-block; background: #667eea; color: white; width: 35px; height: 35px; border-radius: 50%; text-align: center; line-height: 35px; font-weight: bold; margin-right: 10px; font-size: 1.2rem;">3</span> COMMITER VOS CHANGEMENTS</h3>
+                <ol style="font-size: 1.1rem; margin-bottom: 15px;">
+                    <li>Modifier vos fichiers (index.html, style.css...)</li>
+                    <li>Cliquer sur l'icône "Source Control" (à gauche)</li>
+                    <li>Vous voyez les fichiers modifiés</li>
+                    <li>Cliquer sur le <code>+</code> pour ajouter à la staging area</li>
+                    <li>Écrire un message dans "Message" (ex: "Ajouter navigation")</li>
+                    <li>Cliquer "Commit" ✓</li>
+                </ol>
+            </div>
+            
+            <!-- ÉTAPE 4 -->
+            <div style="background: #f8f9fa; border-left: 5px solid #764ba2; padding: 20px; border-radius: 8px; margin-bottom: 15px;">
+                <h3 style="margin-top: 0; color: #764ba2;"><span style="display: inline-block; background: #764ba2; color: white; width: 35px; height: 35px; border-radius: 50%; text-align: center; line-height: 35px; font-weight: bold; margin-right: 10px; font-size: 1.2rem;">4</span> PUSH SUR GITHUB</h3>
+                <ol style="font-size: 1.1rem;">
+                    <li>Après le commit, vous voyez "Sync Changes"</li>
+                    <li>Cliquer "Sync Changes" (ou "Push")</li>
+                    <li>Attendre que ça se synchronise</li>
+                    <li>Votre code est maintenant sur GitHub ! 🚀</li>
+                </ol>
+            </div>
+            
+            <!-- VISUALISATION -->
+            <h3>📍 Où trouver quoi dans VS Code ?</h3>
+            <div class="columns">
+                <div class="box">
+                    <h3 style="margin-top: 0;">Icône Source Control</h3>
+                    <p style="font-size: 1.1rem;">À gauche (ressemble à 3 cercles)<br>C'est là que vous faites vos commits</p>
+                </div>
+                <div class="box">
+                    <h3 style="margin-top: 0;">Les fichiers modifiés</h3>
+                    <p style="font-size: 1.1rem;">Affichés en couleur dans l'explorateur<br>M = Modified, U = Untracked, D = Deleted</p>
+                </div>
+            </div>
+            
+            <!-- CONSEILS -->
+            <div class="success">
+                <h3>💡 BONNES PRATIQUES</h3>
+                <ul style="font-size: 1.1rem;">
+                    <li><strong>Committez régulièrement :</strong> après chaque fonctionnalité</li>
+                    <li><strong>Messages clairs :</strong> "Ajouter bouton contact" plutôt que "changement"</li>
+                    <li><strong>Push avant de partir :</strong> ne laissez pas du code en local</li>
+                </ul>
+            </div>
+            
+            <div class="warning">
+                <h3>⚠️ À ÉVITER</h3>
+                <ul style="font-size: 1.1rem;">
+                    <li>❌ Faire un commit sans message</li>
+                    <li>❌ Oublier de push votre code</li>
+                    <li>❌ Modifier directement sur GitHub (faire en local → push)</li>
+                </ul>
+            </div>
+        </div>
         <!-- SLIDE 20: PLUS DE RESSOURCES -->
         <div class="slide">
             <h2>📚 PLUS DE RESSOURCES WEB</h2>
