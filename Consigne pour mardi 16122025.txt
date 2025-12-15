@@ -1,0 +1,68 @@
+Consigne pour Lundi 15/12/2025
+🎯 AVANT DE COMMENCER
+Récupérer le code depuis CodePen
+
+Allez sur CodePen (lien fourni par Wassila)
+Copiez le code HTML (tout ce qui est dans la section HTML)
+Copiez le code CSS (tout ce qui est dans la section CSS)
+
+Créer les fichiers dans VSC
+
+Créez un dossier portfolio sur votre ordinateur
+Créez un fichier index.html et collez le code HTML
+Créez un fichier style.css et collez le code CSS
+Ouvrez le dossier dans VS Code (File → Open Folder)
+
+Ajoutez le lien CSS dans le <head> du HTML :
+
+html<link rel="stylesheet" href="style.css">
+
+  
+ 📋 EXERCICE : Portfolio Responsive
+Mardi 16 décembre - 3.5h
+🎯 CE QU'IL FAUT FAIRE
+1. Personnaliser le HTML
+Remplacez tous les [placeholders] par VOS INFOS :
+
+[Votre Nom] → votre nom réel
+[Votre Titre Inspirant] → un titre qui vous plaît
+[Compétence 1, 2, 3] → vos vraies compétences
+[Nom du Projet 1, 2] → vos projets
+[Une courte phrase sur vous] → écrivez quelque chose sur vous
+
+2. Personnaliser le CSS
+Cherchez /* TODO MARDI CSS */ et modifiez :
+
+Couleurs : changez les codes couleurs (#0071e3, #f5f5f7, etc.)
+Font-family : essayez 'Georgia', 'Courier New', 'Trebuchet MS'
+Hovers : ajoutez des couleurs au survol des boutons/liens
+Emojis : changez les emojis par d'autres que vous aimez
+
+3. Tester le responsive
+
+Appuyez sur F12 pour ouvrir DevTools
+Cliquez sur l'icône téléphone 📱
+Testez en Tablette (768px) et Mobile (480px)
+
+
+✅ CHECKLIST
+
+ Code HTML et CSS copiés de CodePen
+ Fichiers créés dans VSC (index.html + style.css)
+ Lien CSS ajouté dans le HTML
+ Tous les [placeholders] remplacés
+ Couleurs changées
+ Font-family changée
+ Hovers ajoutés
+ Affichage OK en Desktop ✓
+ Affichage OK en Tablette ✓
+ Affichage OK en Mobile ✓
+
+
+🚀 DEMAIN : PUSH SUR GITHUB
+Jeudi, vous ferez :
+
+Créer un repo GitHub
+Initialiser Git dans votre dossier
+Commiter votre portfolio
+Push vers GitHub
