@@ -192,7 +192,7 @@
     <div class="slide">
         <h2>Contexte</h2>
         <div class="image-container">
-            <img src="img/Capture d'écran 2025-12-18 150317.png" alt="Profil TikTok" style="background: #1d1d1f; width: auto; height: auto;">
+            <img src="https://i.imgur.com/placeholder.jpg" alt="Profil TikTok" style="background: #1d1d1f; width: 350px; height: 600px;">
         </div>
     </div>
 
@@ -209,7 +209,7 @@
                 </ul>
             </div>
             <div style="flex: 0 0 auto;">
-                <img src="img/Capture d'écran 2025-12-18 150317.png" alt="Profil TikTok Netflix" style="max-width: 500px; max-height: 100vh; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); background: #1d1d1f; object-fit: contain;">
+                <img src="https://i.imgur.com/placeholder.jpg" alt="Profil TikTok Netflix" style="max-width: 320px; max-height: 70vh; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); background: #1d1d1f; object-fit: contain;">
             </div>
         </div>
     </div>
@@ -292,9 +292,19 @@
     <!-- Slide 10 : querySelector avec ID -->
     <div class="slide">
         <h2>Sélectionner un élément</h2>
-        <code><span class="keyword">let</span> titre = document.<span class="function">querySelector</span>(<span class="string">"#username"</span>);</code>
-        <p class="subtitle" style="margin-top: 40px;"><span class="highlight">#</span> pour sélectionner un ID</p>
-        <p class="subtitle" style="font-size: 28px;"><span class="highlight">.</span> pour sélectionner une classe</p>
+        <p class="subtitle">querySelector = fonction pour cibler un élément HTML</p>
+        
+        <div style="margin: 40px 0;">
+            <h3 style="font-size: 32px; margin-bottom: 20px; color: #1d1d1f;">Sélectionner par ID :</h3>
+            <code><span class="keyword">let</span> titre = document.<span class="function">querySelector</span>(<span class="string">"#username"</span>);</code>
+            <p style="font-size: 28px; color: #6e6e73; margin-top: 20px;">Le <span class="highlight">#</span> sert à cibler un ID</p>
+        </div>
+
+        <div style="margin: 40px 0;">
+            <h3 style="font-size: 32px; margin-bottom: 20px; color: #1d1d1f;">Sélectionner par classe :</h3>
+            <code><span class="keyword">let</span> titre = document.<span class="function">querySelector</span>(<span class="string">".card"</span>);</code>
+            <p style="font-size: 28px; color: #6e6e73; margin-top: 20px;">Le <span class="highlight">.</span> sert à cibler une classe</p>
+        </div>
     </div>
 
     <!-- Slide 10 : textContent -->
@@ -317,7 +327,7 @@ titre.<span class="function">style</span>.fontSize = <span class="string">"40px"
         <code><span class="keyword">let</span> bouton = document.<span class="function">querySelector</span>(<span class="string">"#monBouton"</span>);
 
 bouton.<span class="function">addEventListener</span>(<span class="string">"click"</span>, <span class="keyword">function</span>() {
-    <span class="comment">// Code à exécuter au clic</span>
+    alert(<span class="string">"Le bouton a été cliqué !"</span>);
 });</code>
     </div>
 
@@ -374,7 +384,31 @@ bouton.<span class="function">addEventListener</span>(<span class="string">"clic
         </ul>
     </div>
 
-    <!-- Slide 17 : Exercice 1 -->
+    <!-- Slide 17 : Démonstration CodePen -->
+    <div class="slide">
+        <h2>Exemples pratiques</h2>
+        <p class="subtitle">Testez et modifiez le code en direct</p>
+        
+        <div style="background: #f5f5f7; padding: 40px; border-radius: 20px; text-align: center; margin: 40px 0;">
+            <p style="font-size: 28px; color: #6e6e73; margin-bottom: 30px;">
+                Accédez aux exemples interactifs sur CodePen :
+            </p>
+            <a href="https://codepen.io/wassila-ams/pen/VYaozwe" target="_blank" 
+               style="display: inline-block; background: #0071e3; color: white; padding: 20px 40px; 
+                      font-size: 24px; text-decoration: none; border-radius: 12px; font-weight: 600;
+                      transition: background 0.3s;">
+                Ouvrir les exemples
+            </a>
+        </div>
+
+        <ul style="margin-top: 40px;">
+            <li>5 exemples pour pratiquer</li>
+            <li>Modifiez le code et testez</li>
+            <li>Forkez pour créer vos propres versions</li>
+        </ul>
+    </div>
+
+    <!-- Slide 18 : Exercice 1 -->
     <div class="slide">
         <h2>Exercice 1</h2>
         <p class="subtitle">Créer des variables</p>
