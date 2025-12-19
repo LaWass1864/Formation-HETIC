@@ -1,0 +1,180 @@
+
+  <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #f5f5f7;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+
+        .slide {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 80px 120px;
+            background: white;
+            border-bottom: 1px solid #d2d2d7;
+        }
+
+        h1 {
+            font-size: 80px;
+            font-weight: 700;
+            margin-bottom: 40px;
+            color: #1d1d1f;
+        }
+
+        h2 {
+            font-size: 56px;
+            font-weight: 600;
+            margin-bottom: 60px;
+            color: #1d1d1f;
+        }
+
+        .subtitle {
+            font-size: 32px;
+            color: #6e6e73;
+            margin-bottom: 60px;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        li {
+            font-size: 36px;
+            line-height: 1.8;
+            color: #1d1d1f;
+            margin-bottom: 20px;
+        }
+
+        li::before {
+            content: "• ";
+            color: #0071e3;
+            font-weight: bold;
+            font-size: 40px;
+            margin-right: 15px;
+        }
+
+        code {
+            background: #1d1d1f;
+            color: #f5f5f7;
+            padding: 40px 60px;
+            border-radius: 16px;
+            font-size: 32px;
+            line-height: 1.8;
+            display: block;
+            font-family: 'SF Mono', Monaco, monospace;
+            margin: 40px 0;
+            white-space: pre;
+            overflow-x: auto;
+        }
+
+        .keyword { color: #fc6399; }
+        .string { color: #fc8f6f; }
+        .number { color: #d0bf69; }
+        .comment { color: #6c7986; }
+        .function { color: #61afef; }
+
+        .image-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 60px 0;
+        }
+
+        .image-container img {
+            max-width: 400px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
+        .table {
+            margin: 40px 0;
+            border-collapse: collapse;
+        }
+
+        .table th,
+        .table td {
+            padding: 20px 40px;
+            text-align: left;
+            font-size: 30px;
+            border-bottom: 2px solid #d2d2d7;
+        }
+
+        .table th {
+            font-weight: 600;
+            color: #1d1d1f;
+        }
+
+        .table td {
+            color: #6e6e73;
+        }
+
+        .highlight {
+            color: #0071e3;
+            font-weight: 600;
+        }
+
+        .warning {
+            color: #ff9500;
+        }
+    </style>
+
+
+
+
+
+<!-- Slide 18 : Solution Exercice 1 -->
+<div class="slide">
+  <h2>Solution Exercice 1</h2>
+  <code
+    ><span class="keyword">let</span> age = <span class="number">17</span>;
+    <span class="keyword">const</span> nom =
+    <span class="string">"Alice"</span>; console.<span class="function"
+      >log</span
+    >(nom); console.<span class="function">log</span>(age);</code
+  >
+</div>
+
+<!-- Slide 20 : Solution Exercice 2 -->
+<div class="slide">
+  <h2>Solution Exercice 2</h2>
+  <code
+    ><span class="keyword">let</span> titre = document.<span class="function"
+      >querySelector</span
+    >(<span class="string">"#titre"</span>); titre.<span class="function"
+      >textContent</span
+    >
+    = <span class="string">"netflixfr"</span>; titre.<span class="function"
+      >style</span
+    >.color = <span class="string">"blue"</span>;</code
+  >
+</div>
+
+<!-- Slide 22 : Solution Exercice 3 -->
+<div class="slide">
+  <h2>Solution Exercice 3</h2>
+  <code
+    ><span class="keyword">let</span> followers =
+    <span class="number">500</span>; <span class="keyword">let</span> bouton =
+    document.<span class="function">querySelector</span>(<span class="string"
+      >"#monBouton"</span
+    >); bouton.<span class="function">addEventListener</span>(<span
+      class="string"
+      >"click"</span
+    >, <span class="keyword">function</span>() {
+    <span class="keyword">if</span> (followers >
+    <span class="number">1000</span>) { alert(<span class="string"
+      >"✅ Vérifié"</span
+    >); } <span class="keyword">else</span> { alert(<span class="string"
+      >"❌ Non vérifié"</span
+    >); } });</code
+  >
+</div>
