@@ -10,77 +10,97 @@
         @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
 
 /* ÉTAPE 1 : Body - Fond noir + centrage */
+/* Importe la police "Oswald" depuis Google Fonts avec plusieurs graisses */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
+/* ============================= */
+/* ÉTAPE 1 : Style global du body */
+/* ============================= */
 body {
-  background-color: rgb(25, 25, 25);
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0;
-  padding: 0;
+  background-color: rgb(25, 25, 25); /* Définit un fond presque noir pour toute la page */
+  min-height: 100vh;                /* Force le body à faire au minimum la hauteur de la fenêtre */
+  display: flex;                    /* Active Flexbox pour faciliter le centrage */
+  justify-content: center;          /* Centre horizontalement le contenu */
+  align-items: center;              /* Centre verticalement le contenu */
+  margin: 0;                        /* Supprime les marges par défaut du navigateur */
+  padding: 0;                       /* Supprime les espacements internes par défaut */
 }
 
-
-/* ÉTAPE 2-8 : Classe typewriter */
+/* ================================= */
+/* ÉTAPE 2-8 : Classe .typewriter    */
+/* ================================= */
 .typewriter {
-  /* ÉTAPE 2 : Style de base */
-  color: rgba(255, 255, 255, 0.75);
-    font-family: "Oswald", sans-serif;
-  font-size: 180%;
-  
-  /* ÉTAPE 3 : Box model */
-padding: 20px;
-  width: 24em;
-  text-align: center; 
-  
-  /* ÉTAPE 4 : Bordures (séparées pour éviter conflit) */
-  border-top: 3px solid #00d9ff;
-  border-left: 3px solid #00d9ff;
-  border-bottom: 3px solid #00d9ff;
-  border-right: 2px solid rgba(255, 255, 255, 0.75);
-  border-radius: 10px;
-  
-  /* ÉTAPE 5 : Effet néon */
+
+  /* -------- ÉTAPE 2 : Style de base -------- */
+  color: rgba(255, 255, 255, 0.75); /* Définit la couleur du texte en blanc semi-transparent */
+  font-family: "Oswald", sans-serif;/* Applique la police Oswald (fallback sans-serif) */
+  font-size: 180%;                  /* Augmente la taille du texte par rapport à la taille par défaut */
+
+  /* -------- ÉTAPE 3 : Box model -------- */
+  padding: 20px;                    /* Ajoute de l’espace entre le texte et les bordures */
+  width: 24em;                      /* Définit la largeur du bloc en fonction de la taille du texte */
+  text-align: center;               /* Centre le texte horizontalement */
+
+  /* -------- ÉTAPE 4 : Bordures -------- */
+  border-top: 3px solid #00d9ff;    /* Bordure supérieure bleue de 3px */
+  border-left: 3px solid #00d9ff;  /* Bordure gauche bleue de 3px */
+  border-bottom: 3px solid #00d9ff;/* Bordure inférieure bleue de 3px */
+  border-right: 2px solid rgba(255, 255, 255, 0.75); 
+                                    /* Bordure droite plus fine pour simuler un curseur */
+  border-radius: 10px;              /* Arrondit les angles du cadre */
+
+  /* -------- ÉTAPE 5 : Effet néon (boîte) -------- */
   box-shadow: 
-    0 0 10px #00d9ff,
-    0 0 20px #00d9ff,
-    0 0 40px #00d9ff,
-    inset 0 0 10px rgba(0, 217, 255, 0.2);
-  
+    0 0 10px #00d9ff,               /* Halo lumineux proche */
+    0 0 20px #00d9ff,               /* Halo plus large */
+    0 0 40px #00d9ff,               /* Halo encore plus diffus */
+    inset 0 0 10px rgba(0, 217, 255, 0.2); 
+                                    /* Lumière bleutée à l’intérieur du cadre */
+
+  /* -------- Effet néon sur le texte -------- */
   text-shadow: 
-    0 0 10px #00d9ff,
-    0 0 20px #00d9ff,
-    0 0 40px #00d9ff;
-  
-  /* ÉTAPE 6 : Préparation animation */
-  white-space: nowrap;
-  overflow: hidden;
-  
-  /*ÉTAPE 9 : Préparation animation*/
+    0 0 10px #00d9ff,               /* Lueur proche du texte */
+    0 0 20px #00d9ff,               /* Lueur intermédiaire */
+    0 0 40px #00d9ff;               /* Lueur diffuse */
+
+  /* -------- ÉTAPE 6 : Préparation animation -------- */
+  white-space: nowrap;              /* Empêche le texte de passer à la ligne */
+  overflow: hidden;                 /* Cache le texte qui dépasse du conteneur */
+
+  /* -------- ÉTAPE 9 : Animations -------- */
   animation: 
     typewriter 4s steps(44) 1s 1 normal both,
+                                    /* Anime la largeur pour créer l’effet machine à écrire */
     blinkTextCursor 500ms steps(44) infinite normal;
+                                    /* Fait clignoter le curseur */
 }
 
-/* ÉTAPE 7 : Animation typewriter */
+/* ================================= */
+/* ÉTAPE 7 : Animation machine à écrire */
+/* ================================= */
 @keyframes typewriter {
   from {
-    width: 0;
+    width: 0;                       /* Le texte commence totalement caché */
   }
   to {
-    width: 24em;
+    width: 24em;                    /* Le texte devient entièrement visible */
   }
 }
 
-/* ÉTAPE 8 : Animation curseur */
+/* ================================= */
+/* ÉTAPE 8 : Animation du curseur    */
+/* ================================= */
 @keyframes blinkTextCursor {
   from {
     border-right-color: rgba(255, 255, 255, 0.75);
+                                    /* Curseur visible */
   }
   to {
     border-right-color: transparent;
+                                    /* Curseur invisible (clignotement) */
   }
 }
+
 
     </style>
    <p class="typewriter">Je suis un développeur web ✨</p>
